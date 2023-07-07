@@ -21,17 +21,17 @@ mixin coverDescriptionIfContent(featured=false)
     h2
       a(
         href='[##_cover_item_url_##]'
-        class='text-h-800 dark:text-h-200') [##_cover_item_title_##]
+        class='text-h-200') [##_cover_item_title_##]
     unless featured
       time(class='text-h-400 text-sm') [##_cover_item_simple_date_##]
-      p(class='relative overflow-hidden leading-7 text-h-500 dark:text-h-400') [##_cover_item_summary_##]
+      p(class='relative overflow-hidden leading-7 text-h-400') [##_cover_item_summary_##]
 
 mixin coverDescriptionIfNotContent(featured=false)
   .description(class='flex flex-col')&attributes(attributes)
     h2
       a(
         href='[##_cover_item_url_##]'
-        class='text-h-800 dark:text-h-200') [##_cover_item_title_##]
+        class='text-h-200') [##_cover_item_title_##]
     unless featured
       p [##_cover_item_summary_##]
 
@@ -45,7 +45,7 @@ mixin coverList(mode, featured=false)
   section(
     data-mode=mode
     class='flex flex-col items-center px-4 lg:px-0 lg:w-idx lg:mx-auto')
-    div(class='text-3xl font-bold text-h-600 dark:text-h-200 my-10 empty:my-10 lg:my-20') [##_cover_title_##]
+    div(class='text-3xl font-bold text-h-200 my-10 empty:my-10 lg:my-20') [##_cover_title_##]
     .list
       +coverItem()
         +coverImage()

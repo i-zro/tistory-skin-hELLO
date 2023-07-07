@@ -8,7 +8,7 @@ div(
   x-transition:leave='transition ease-linear duration-300'
   x-transition:leave-start='opacity-100'
   x-transition:leave-end='opacity-0'
-  class='w-full box-border px-4 h-14 top-0 fixed flex justify-between items-center z-30 backdrop-blur bg-h-100/50 dark:bg-h-800/80 xl:px-5 <s_if_var_sidebar>xl:w-c</s_if_var_sidebar>')
+  class='w-full box-border px-4 h-14 top-0 fixed flex justify-between items-center z-30 backdrop-blur bg-h-800/80 xl:px-5 <s_if_var_sidebar>xl:w-c</s_if_var_sidebar>')
   div
     img.lazyload(
       @click='sidebar = ! sidebar'
@@ -19,12 +19,12 @@ div(
       width='36'
       height='36')
   div
-    div(class='m-0 text-sm font-bold h-5 text-overflow-hidden max-w-[calc(80vw-152px)] text-h-800 dark:text-h-200') [##_page_title_##]
+    div(class='m-0 text-sm font-bold h-5 text-overflow-hidden max-w-[calc(80vw-152px)] text-h-200') [##_page_title_##]
   div
     button.subscription(
       :data-blog-id='T.config.BLOG.id'
       :data-url='TistoryBlog.tistoryUrl'
-      class='flex justify-center items-center w-10 h-10 outline-0 rounded-full bg-h-200 text-h-500 hover:bg-h-300 dark:text-h-200 dark:bg-h-700 dark:hover:bg-h-600 btn_menu_toolbar btn_subscription #subscribe')
+      class='flex justify-center items-center w-10 h-10 outline-0 rounded-full bg-h-700 text-h-200 hover:bg-h-600 btn_menu_toolbar btn_subscription #subscribe')
       span(class='text-hidden') 구독하기
       i(class='fa-solid fa-star font-bold text-sm')
 

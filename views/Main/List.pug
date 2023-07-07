@@ -1,13 +1,13 @@
 s_list
   section(data-mode='[##_list_style_##]')
-    header(class='h-64 mb-10 flex justify-center items-center border-b border-b-solid border-b-h-200 dark:border-b-h-700 lg:mb-16')
+    header(class='h-64 mb-10 flex justify-center items-center border-b border-b-solid border-b-h-700 lg:mb-16')
       s_list_image
         .thumbnail(class='absolute right-0 top-0 w-full h-64 before:content-[""] before:absolute before:right-0 before:top-0 before:w-full before:h-64 before:bg-h-900/50 before:z-10 [&+.description]:text-h-200')
           img(
             src='[##_list_image_##]'
             alt=''
             class='absolute right-0 top-0 w-full h-64 z-0 object-cover')
-      .description(class='flex flex-col items-center z-20 relative mx-4 text-center text-h-800 dark:text-h-200 lg:mx-0')
+      .description(class='flex flex-col items-center z-20 relative mx-4 text-center text-h-200 lg:mx-0')
         h1(class='font-bold text-2xl lg:text-3xl') [##_list_conform_##]
         span(class='font-bold mt-3 empty:mt-0') [##_list_description_##]
     .list(
@@ -24,7 +24,7 @@ style
       }
 
       .post {
-        @apply flex flex-col gap-y-4 sm:flex-row-reverse sm:items-center sm:justify-end sm:gap-x-6 sm:h-72 sm:border-t sm:border-solid sm:border-h-300 sm:dark:border-h-400;
+        @apply flex flex-col gap-y-4 sm:flex-row-reverse sm:items-center sm:justify-end sm:gap-x-6 sm:h-72 sm:border-t sm:border-solid sm:border-h-400;
 
         .thumbnail {
           img {
@@ -105,7 +105,7 @@ style
         }
 
         &::before {
-          @apply content-[''] top-[calc(100%+theme(spacing.6))] left-[calc(100%/2)] lg:top-[calc(100%+theme(spacing.6))] lg:left-[calc(theme('screens.lg')/2)] absolute w-0.5 h-12 lg:h-16 bg-h-300 dark:bg-h-600;
+          @apply content-[''] top-[calc(100%+theme(spacing.6))] left-[calc(100%/2)] lg:top-[calc(100%+theme(spacing.6))] lg:left-[calc(theme('screens.lg')/2)] absolute w-0.5 h-12 lg:h-16 bg-h-600;
         }
 
         .thumbnail {
@@ -115,7 +115,7 @@ style
         }
 
         .description {
-          @apply bg-h-200 gap-y-2 p-10 lg:p-16 dark:bg-h-700;
+          @apply bg-h-700 gap-y-2 p-10 lg:p-16;
 
           h2 {
             @apply text-xl lg:text-2xl font-bold;

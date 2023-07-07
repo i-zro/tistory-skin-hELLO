@@ -40,18 +40,19 @@ html#hELLO(
         hljsDark: '[##_var_hljs-dark_##]'
       }
 
-    script(fixed).
-      if (! ('TTDARK' in localStorage)) {
-        localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'N'
-      }
+    //- 다크모드 활성화/비활성화
+    //- script(fixed).
+    //-   if (! ('TTDARK' in localStorage)) {
+    //-     localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'N'
+    //-   }
 
-      window.TTDARK = localStorage.TTDARK === 'Y'
+    //-   window.TTDARK = localStorage.TTDARK === 'Y'
 
-      document.documentElement.classList.toggle('dark', TTDARK)
+    //-   document.documentElement.classList.toggle('dark', TTDARK)
 
   body(
     id='[##_body_id_##]'
-    class='min-w-xs overflow-x-hidden bg-h-100 text-h-900 dark:bg-h-800 dark:text-h-200')
+    class='min-w-xs overflow-x-hidden bg-h-800 text-h-200')
     block TIDORY
 
     script.
