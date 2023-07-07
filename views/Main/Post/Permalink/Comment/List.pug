@@ -1,6 +1,6 @@
 mixin comment(type, replyable=true)
   div(
-    class=`[##_${type}_rep_class_##] flex flex-col gap-y-4 relative before:content-[''] before:absolute before:w-[1px] before:h-[calc(100%-65px)] before:left-[calc(theme(spacing.12)/2)] before:top-16 before:bg-h-300 dark:before:bg-h-400`)
+    class=`[##_${type}_rep_class_##] flex flex-col gap-y-4 relative before:content-[''] before:absolute before:w-[1px] before:h-[calc(100%-65px)] before:left-[calc(theme(spacing.12)/2)] before:top-16 before:bg-h-400`)
     div
       div(class='flex items-center gap-x-4')
         img.lazyload(
@@ -11,9 +11,9 @@ mixin comment(type, replyable=true)
           height='48'
           class='rounded-full')
         div
-          div(class='text-sm font-bold text-h-600 dark:text-h-200 [&_img]:hidden') #{`[##_${type}_rep_name_##]`}
+          div(class='text-sm font-bold text-h-200 [&_img]:hidden') #{`[##_${type}_rep_name_##]`}
           time(class='text-h-400 text-xs') #{`[##_${type}_rep_date_##]`}
-    div(class='pl-16 leading-7 text-sm text-h-500 dark:text-h-300') #{`[##_${type}_rep_desc_##]`}
+    div(class='pl-16 leading-7 text-sm text-h-300') #{`[##_${type}_rep_desc_##]`}
     div(class='pl-16 flex gap-x-1 text-h-400 text-xs')
       a(
         href='#'

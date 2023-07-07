@@ -14,7 +14,7 @@ button {
 /* https://github.com/aFarkas/lazysizes#css-api */
 .lazyload,
 .lazyloading {
-  @apply animate-pulse bg-h-300 dark:bg-h-700;
+  @apply animate-pulse bg-h-700;
 }
 
 .lazyloaded {
@@ -85,4 +85,8 @@ button {
   .fa-tag {
     @apply font-awesome content-['\f02b'];
   }
+}
+
+#tt-body-page .hljs {
+  color: #e6e6e9;
 }
