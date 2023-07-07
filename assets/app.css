@@ -87,6 +87,19 @@ button {
   }
 }
 
+/* 코드블럭 */
 #tt-body-page .hljs {
   color: #e6e6e9;
+}
+
+/* 오픈그래프 */
+#tt-body-page #content .contents_style figure[data-ke-type=opengraph] .og-text .og-title {
+  color: #f4f4f6;
+}
+
+/* 카테고리의 다른 글 */
+#tt-body-page .another_category_color_gray *,
+#tt-body-page .another_category_color_gray h4, 
+#tt-body-page .another_category_color_gray h4 a {
+  color: #e6e6e9 !important;
 }
