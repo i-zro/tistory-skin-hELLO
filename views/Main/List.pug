@@ -1,6 +1,6 @@
 s_list
   section(data-mode='[##_list_style_##]')
-    header(class='h-64 mb-10 flex justify-center items-center border-b border-b-solid border-b-h-700 lg:mb-16')
+    header(class='relative h-64 mb-10 flex justify-center items-center border-b border-b-solid border-b-h-700 lg:mb-16')
       s_list_image
         .thumbnail(class='absolute right-0 top-0 w-full h-64 before:content-[""] before:absolute before:right-0 before:top-0 before:w-full before:h-64 before:bg-h-900/50 before:z-10 [&+.description]:text-h-200')
           img(
@@ -10,6 +10,15 @@ s_list
       .description(class='flex flex-col items-center z-20 relative mx-4 text-center text-h-200 lg:mx-0')
         h1(class='font-bold text-2xl lg:text-3xl') [##_list_conform_##]
         span(class='font-bold mt-3 empty:mt-0') [##_list_description_##]
+      .wave(class='absolute left-0 bottom-[-1px] z-20 w-[100%] h-[2.5em]')
+        svg(class='waves w-[100%] h-[100%]' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 24 150 28' preserveAspectRatio='none' shape-rendering='auto')
+          defs
+            path(id='gentle-wave' d='M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z')
+          g(class='parallax')
+            use(xlink:href='#gentle-wave' x='48' y='0' class='fill-h-800/70')
+            use(xlink:href='#gentle-wave' x='48' y='3' class='fill-h-800/50')
+            use(xlink:href='#gentle-wave' x='48' y='5' class='fill-h-800/30')
+            use(xlink:href='#gentle-wave' x='48' y='7' class='fill-h-800')
     .list(
       x-ref='list'
       class='px-4 lg:px-0 lg:w-idx lg:mx-auto')
