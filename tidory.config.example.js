@@ -3,8 +3,8 @@
  * https://tidory.com/docs/configuration/
  */
 module.exports = {
-  ts_session: '424a31fcc5e50088bc461647874a6f8e5b1ba7ca',
-  url: 'https://taedonn.tistory.com/',
+  ts_session: '',
+  url: '',
 
   preview: {
     /**
