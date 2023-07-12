@@ -6,6 +6,10 @@
   @apply hidden;
 }
 
+body {
+  font-family: 'Mabinogi Classic';
+}
+
 a,
 button {
   @apply pointer-events-auto !important;
