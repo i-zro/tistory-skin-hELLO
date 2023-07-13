@@ -1,14 +1,21 @@
 s_list
   section(
       data-mode='[##_list_style_##]')
-    header(class='relative h-[20em] mb-10 flex justify-center items-center border-b border-b-solid border-b-h-700 lg:mb-16')
-      s_list_image
-        .thumbnail(class='absolute right-0 top-0 w-full h-[20em] before:content-[""] before:absolute before:right-0 before:top-0 before:w-full before:h-[20em] before:bg-h-300/80 before:z-10 [&+.description]:text-h-800')
-          img(
-            src='https://wallpaperaccess.com/full/8351171.gif'
-            alt=''
-            class='absolute right-[-7em] top-0 w-full h-[20em] z-0 object-cover')
-      .description(class='flex flex-col items-center z-20 relative mx-4 text-center text-h-800 lg:mx-0')
+    header(class='relative h-[20em] flex justify-center items-center')
+      //- img(
+      //-   class="w-[28em] h-[14em] absolute z-10 left-[50%] translate-x-[-50%] bg-b-800"
+      //-   src="https://drive.google.com/uc?id=1Z1oSMmFBElhAUHuIcgGZCPddvqUFZzhE"
+      //-   alt="픽셀 박스"
+      //- )
+      svg(class="w-[40em] h-[14em] absolute z-10 left-[50%] translate-x-[-50%]" preserveAspectRatio="none" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg")
+        path(class="fill-b-800 stroke-b-100" stroke-width="4" d="M878 120V122H880H938V180V182H940H998V998H62V940V938H60H2V62H180H182V60V2H878V120Z")
+      //- s_list_image
+        //- .thumbnail(class='absolute right-0 top-0 w-full h-[20em] before:content-[""] before:absolute before:right-0 before:top-0 before:w-full before:h-[20em] before:bg-h-300/80 before:z-10 [&+.description]:text-h-800')
+        //-   img(
+        //-     src='[##_list_image_##]'
+        //-     alt=''
+        //-     class='absolute top-0 w-full h-[20em] z-0 object-cover')
+      .description(class='flex flex-col items-center z-20 relative mx-4 text-center text-b-100 lg:mx-0')
         h1(class='font-bold text-2xl lg:text-3xl') [##_list_conform_##]
         span(class='font-bold mt-[0.5em] empty:mt-0') [##_list_description_##]
       //- .wave(class='absolute left-0 bottom-[-1px] z-20 w-[100%] h-[2.5em]')
