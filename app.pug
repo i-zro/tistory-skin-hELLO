@@ -14,12 +14,12 @@ html#hELLO(
     link(rel='alternate' type='application/rss+xml' title='[##_title_##]' href='[##_rss_url_##]')
 
     link(rel='preconnect' href='//fonts.gstatic.com')
-
     link(rel='stylesheet' :href='"//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"')
     link(rel='stylesheet' :href='"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"')
     link(rel='stylesheet' :href='"//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-subset.css"')
     link(rel='stylesheet' :href='`//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/${dark ? skinOptions.hljsDark : skinOptions.hljs}.min.css`')
 
+    //- 마비노기 옛체
     link(rel="stylesheet" :href='"https://cdn.jsdelivr.net/gh/fonts-archive/MabinogiClassic/MabinogiClassic.css"')
 
     style(fixed).
@@ -42,20 +42,52 @@ html#hELLO(
         hljsDark: '[##_var_hljs-dark_##]'
       }
 
-    //- 다크모드 활성화/비활성화
     script(fixed).
-      if (! ('TTDARK' in localStorage)) {
-        localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'N'
-      }
-
-      window.TTDARK = localStorage.TTDARK === 'Y'
-
-      document.documentElement.classList.toggle('dark', TTDARK)
+      //- 다크모드 활성화/비활성화
+      if (! ('TTDARK' in localStorage)) { localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'N'; }
+      window.TTDARK = localStorage.TTDARK === 'Y';
+      document.documentElement.classList.toggle('dark', TTDARK);
 
   body(
     id='[##_body_id_##]'
-    class='min-w-xs overflow-x-hidden bg-h-200 text-h-800')
+    class='min-w-xs overflow-x-hidden bg-b-900 text-b-100')
     block TIDORY
 
     script.
       window.addEventListener('DOMContentLoaded', () => Alpine.start())
+
+    //- 배경 반짝임 애니메이션
+    div(class='sky w-[100%] h-[100%]')
+    script(fixed).
+      let sky = document.querySelector('.sky');
+
+      function createDiv(size) {
+        let circle = document.createElement('div');
+        circle.classList.add('circle');
+        
+        let randRange5 = Math.floor(Math.random() * 5) + 1;
+        circle.classList.add(`blink_${randRange5}`);
+        
+        let widthAndHeight = random(size, 'px');
+        circle.style.height = circle.style.width = widthAndHeight;
+        
+        circle.style.left = random(window.innerWidth, 'px');
+        circle.style.top = random(window.innerHeight, 'px');
+        
+        sky.appendChild(circle);
+      }
+
+      let [starSlider, sizeSlider] = document.querySelectorAll('.slider');
+      let [stars, size] = document.querySelectorAll('.value');
+
+      function paintStars(stars, size) {
+        while (sky.firstChild) { sky.removeChild(sky.firstChild); }
+        for (let i = 0; i < stars; i++) { createDiv(size); }
+      }
+      
+      function random(range, unit) {
+        let randNum = Math.floor(Math.random() * range) + 1;
+        return `${randNum}${unit}`;
+      }
+
+      paintStars(50, 5);
