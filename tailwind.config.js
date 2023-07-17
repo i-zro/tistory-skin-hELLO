@@ -23,7 +23,7 @@ module.exports = {
         500: '#6171A9',
         600: '#48578E',
         700: '#334173',
-        800: '#212C58',
+        800: '#1F2127',
         900: '#000028',
         blue: '#5db0d7',
         orange: '#ff5544'
@@ -54,7 +54,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'Noto Sans KR',
+          'SUITE',
           ...defaultTheme.fontFamily.sans
         ],
         mono: [
