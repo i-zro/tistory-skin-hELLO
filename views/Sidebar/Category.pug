@@ -1,5 +1,8 @@
 .sidebar-element
-  #category(x-data='category')
+  #category(
+    x-data='category'
+    class='py-6 border-t-[2px] border-b-500'
+  )
     | [##_category_list_##]
 
 script.
@@ -77,7 +80,7 @@ style
           }
 
           .link_tit {
-            @apply text-sm font-bold mb-6 inline-block text-h-200;
+            @apply text-sm font-bold mb-4 inline-block text-b-900;
           }
 
           ul {
