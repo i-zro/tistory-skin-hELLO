@@ -1,10 +1,16 @@
 #bottom(class='flex justify-end px-4 w-full box-border fixed text-sm z-30 bottom-3 xl:bottom-4 <s_if_var_sidebar>xl:w-c</s_if_var_sidebar>')
-  div(class='flex gap-x-3')
+  div(class='flex flex-col gap-y-3')
     //- button(
     //-   x-data='theme'
     //-   @click='toggle')
     //-   span(class='text-hidden') 테마
     //-   i(class='fa-solid fa-moon text-base')
+    button.subscription(
+      :data-blog-id='T.config.BLOG.id'
+      :data-url='TistoryBlog.tistoryUrl'
+      class='flex justify-center items-center w-10 h-10 outline-0 rounded-full text-b-white border border-b-400 bg-b-200 hover:bg-b-300 btn_menu_toolbar btn_subscription #subscribe')
+      span(class='text-hidden') 구독하기
+      i(class='fa-solid fa-star font-bold text-sm')
     a(href='#hELLO')
       span(class='text-hidden') 상단으로
       i(class='fa-solid fa-chevron-up text-base')
@@ -27,6 +33,6 @@ style
     #bottom {
       a,
       button {
-        @apply flex justify-center items-center w-10 h-10 outline-0 rounded-full bg-h-700 text-h-200 hover:bg-h-600;
+        @apply flex justify-center items-center w-10 h-10 outline-0 text-b-900 rounded-full border border-b-400 bg-b-200 hover:bg-b-300;
       }
     }

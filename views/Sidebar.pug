@@ -1,6 +1,6 @@
 aside#sidebar(
   :class='sidebar ? "left-0" : "-left-[calc(theme(width.s))]"'
-  class='h-full fixed top-0 w-s overflow-hidden z-40 transition-[left] duration-200 p-0 bg-b-200 border-r-[2px] border-b-500 <s_if_var_sidebar>xl:left-0</s_if_var_sidebar>')
+  class='h-full fixed top-0 w-s overflow-hidden z-40 transition-[left] duration-200 p-0 bg-b-200 border-r border-b-400 <s_if_var_sidebar>xl:left-0</s_if_var_sidebar>')
   div(class='flex flex-col gap-y-5 overflow-x-hidden overflow-y-scroll h-full w-[calc(theme(width.s)+theme(spacing.8))] absolute py-6 border-box')
     s_sidebar
       s_sidebar_element
@@ -57,11 +57,15 @@ style
         }
 
         i {
-          @apply text-b-800;
+          @apply text-b-700;
         }
 
         a:not(.link_tit) {
-          @apply text-b-800 hover:text-b-900;
+          @apply text-b-700 hover:text-b-900;
+        }
+
+        .link_item {
+          @apply block w-[100%] h-[100%] px-3 py-2;
         }
       }
     }
