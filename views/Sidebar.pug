@@ -53,11 +53,17 @@ style
         @apply w-64 px-5;
 
         h2 {
-          @apply text-b-900 mb-4 font-bold text-sm;
+          @apply text-b-900 mb-3 font-bold text-sm;
         }
 
         i {
           @apply text-b-700;
+        }
+
+        .hashtag:hover i,
+        .recent-comments:hover i,
+        .recent-comments:hover div {
+          @apply text-b-900
         }
 
         a:not(.link_tit) {

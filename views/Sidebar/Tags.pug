@@ -1,10 +1,10 @@
 .sidebar-element
-  div
-    h2
+  div(class='pt-6 border-t border-b-400')
+    h2(class='px-3')
       a.link_tit(href='/tag') 태그
     ul(class='flex flex-col gap-y-2')
       s_random_tags
         li(class='text-sm')
-          i(class='fa fa-hashtag mr-2')
-          a(href='[##_tag_link_##]'
-            class='[##_tag_class_##]') [##_tag_name_##]
+          a(href='[##_tag_link_##]' class='hashtag px-3 py-1 rounded-full hover:bg-b-purple group')
+            i(class='fa fa-hashtag mr-2')
+            span(class='[##_tag_class_##]') [##_tag_name_##]
