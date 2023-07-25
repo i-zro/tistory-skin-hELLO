@@ -41,7 +41,8 @@ module.exports = {
         transparent: 'transparent',
         white: '#FFFFFF',
         black: '#000000',
-        purple: '#6C5DD3'
+        purple: '#6C5DD3',
+        deeppurple: '#59519E'
       }
     },
     extend: {
@@ -49,7 +50,8 @@ module.exports = {
         idx: '1100px',
         pem: 'var(--h-width)',
         s: '16rem', // sidebar
-        c: 'calc(100% - 16rem)' // 100% - width.sidebar
+        c: 'calc(100% - 16rem)', // 100% - width.sidebar
+        content: 'max-content'
       },
       keyframes: {
         loading: {

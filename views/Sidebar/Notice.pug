@@ -1,10 +1,10 @@
 .sidebar-element
-  div
-    h2
+  div(class='pt-6 border-t border-b-400')
+    h2(class='px-3')
       a.link_tit(href='/notice') 공지사항
     s_rct_notice
-      ul(class='flex flex-col gap-y-3')
+      ul(class='flex flex-col gap-y-2')
         s_rct_notice_rep
           li(class='text-sm')
-            i(class='fa-regular fa-bell text-h-300 mr-2')
+            i(class='fa-regular fa-bell text-b-700 mr-2')
             a(href='[##_notice_rep_link_##]') [##_notice_rep_title_##]
