@@ -8,12 +8,13 @@
         class='object-cover bg-b-900')
   .description(class='flex flex-col')
     if hasCategory
-      a(
-        href=`[##_${type}_rep_category_link_##]`
-        class='text-sm text-b-700') #{`[##_${type}_rep_category_##]`}
+      div(class='flex flex-row items-center')
+        a(
+          href=`[##_${type}_rep_category_link_##]`
+          class='block bg-b-400 hover:bg-b-purple px-3 py-2 rounded-full leading-none text-sm text-b-900 mr-2') #{`[##_${type}_rep_category_##]`}
+        time(class='text-b-700 text-sm') #{`[##_${type}_rep_${type === 'list' ? 'regdate' : 'date'}_##]`}
     h2
       a(
         href=`[##_${type}_rep_link_##]`
         class='text-b-900 [&_img]:hidden') #{`[##_${type}_rep_title_##]`}
-    time(class='text-b-700 text-sm') #{`[##_${type}_rep_${type === 'list' ? 'regdate' : 'date'}_##]`}
     p(class='relative overflow-hidden text-b-700 leading-7') #{`[##_${type}_rep_summary_##]`}

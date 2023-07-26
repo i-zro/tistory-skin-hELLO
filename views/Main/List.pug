@@ -25,11 +25,11 @@ style
       }
 
       .post {
-        @apply flex flex-col gap-y-4 sm:flex-row-reverse sm:items-center sm:justify-end sm:gap-x-6 sm:h-72 sm:border-t sm:border-solid sm:border-b-400;
+        @apply flex flex-col gap-y-4 py-8 sm:flex-row-reverse sm:items-center sm:justify-end sm:gap-x-6 sm:border-t sm:border-b-400;
 
         .thumbnail {
           img {
-            @apply w-full sm:w-64 sm:h-64 max-w-none;
+            @apply w-full sm:w-48 sm:h-48 max-w-none rounded-[8px];
           }
         }
 
@@ -48,6 +48,14 @@ style
             }
           }
         }
+      }
+
+      .post:first-of-type {
+        @apply border-t-b-transparent pt-0
+      }
+
+      .post:last-of-type {
+        @apply pb-0
       }
     }
 
@@ -116,7 +124,7 @@ style
         }
 
         .description {
-          @apply bg-b-700 gap-y-2 p-10 lg:p-16;
+          @apply bg-b-350/60 gap-y-2 p-10 lg:p-16;
 
           h2 {
             @apply text-xl lg:text-2xl font-bold;

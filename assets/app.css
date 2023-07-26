@@ -11,6 +11,10 @@ button {
   @apply pointer-events-auto !important;
 }
 
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
 /* https://github.com/aFarkas/lazysizes#css-api */
 .lazyload,
 .lazyloading {
@@ -87,53 +91,12 @@ button {
   }
 }
 
-/* 코드블럭 */
-#tt-body-page .hljs {
-  color: #e6e6e9;
-}
-
 /* 오픈그래프 */
 #tt-body-page #content .contents_style figure[data-ke-type=opengraph] .og-text .og-title {
   color: #f4f4f6;
 }
 
-/* 카테고리의 다른 글 */
-#tt-body-page .another_category_color_gray *,
-#tt-body-page .another_category_color_gray h4, 
-#tt-body-page .another_category_color_gray h4 a {
-  color: #e6e6e9 !important;
-}
-
-/* 웨이브 애니메이션 */
-.parallax > use {
-  animation: move-forever 10s cubic-bezier(.55,.5,.45,.5) infinite;
-}
-
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 5s;
-}
-
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 7s;
-}
-
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 9s;
-}
-
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 11s;
-}
-
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px,0,0);
-  }
-  100% {
-    transform: translate3d(85px,0,0);
-  }
+/* 카테고리의 다른 글 (중복된 거 없앰) */
+#tt-body-page .another_category {
+  display: none !important;
 }

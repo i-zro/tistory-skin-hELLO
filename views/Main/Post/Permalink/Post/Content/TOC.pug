@@ -1,7 +1,7 @@
 template(x-if='$data.headings.length > 0')
   #TOC(
-    class='rounded-md p-5 mb-8 box-border bg-h-700 text-h-200')
-    strong(class='flex items-center justify-between text-overflow-hidden text-sm pb-2 mb-4 border-b border-solid border-h-200')
+    class='rounded-[12px] p-8 mb-8 box-border bg-b-350/60 text-b-900')
+    strong(class='flex items-center justify-between text-overflow-hidden text-sm pb-2 mb-4 border-b border-solid border-b-400')
       span(class='text-base') 목차
       i(class='fas fa-bars')
     ol(class='flex flex-col gap-y-3')
@@ -9,7 +9,7 @@ template(x-if='$data.headings.length > 0')
         li(:class='{ "pl-0": heading.tagName === "H2", "pl-4": heading.tagName === "H3" }')
           a(
             :href='heading.href'
-            class='flex items-center justify-between text-sm duration-200 text-h-400 hover:text-h-200')
+            class='flex items-center justify-between text-sm duration-200 text-b-800 hover:text-b-900')
             div(
               x-text='heading.text'
               class='text-overflow-hidden')

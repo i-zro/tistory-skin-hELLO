@@ -11,10 +11,10 @@ mixin comment(type, replyable=true)
           height='48'
           class='rounded-full')
         div
-          div(class='text-sm font-bold text-h-200 [&_img]:hidden') #{`[##_${type}_rep_name_##]`}
-          time(class='text-h-400 text-xs') #{`[##_${type}_rep_date_##]`}
-    div(class='pl-16 leading-7 text-sm text-h-300') #{`[##_${type}_rep_desc_##]`}
-    div(class='pl-16 flex gap-x-1 text-h-400 text-xs')
+          div(class='text-sm font-bold text-b-900 [&_img]:hidden') #{`[##_${type}_rep_name_##]`}
+          time(class='text-b-700 text-xs') #{`[##_${type}_rep_date_##]`}
+    div(class='pl-16 leading-7 text-sm text-b-900') #{`[##_${type}_rep_desc_##]`}
+    div(class='pl-16 flex gap-x-1 text-b-700 text-xs')
       a(
         href='#'
         onclick=`[##_${type}_rep_onclick_delete_##]`) 수정/삭제
@@ -42,7 +42,7 @@ mixin list(type, rType, reverse=false)
             x-data='{ open: ! skinOptions.foldableReply, children: [] }'
             id=`[##_${type}_rep_id_##]`
             :class='{ "[&>div]:before:hidden": children.length === 0 }'
-            class='flex flex-col gap-y-5 border-b border-dotted border-h-400 pb-5')
+            class='flex flex-col gap-y-5 border-b border-dotted border-b-400 pb-5')
             +comment(type)
             #{`s_${rType}_container`}
               ol(
@@ -59,10 +59,10 @@ style
   :postcss
     #comments {
       .tt_more_preview_comments_wrap {
-        @apply my-4 text-sm bg-h-700 text-h-200 rounded-xl py-3 px-4 duration-200;
+        @apply my-4 text-sm bg-b-350/60 text-b-900 rounded-xl py-3 px-4 duration-200;
 
         &:hover {
-          @apply bg-h-600;
+          @apply bg-b-purple;
         }
 
         &::after {

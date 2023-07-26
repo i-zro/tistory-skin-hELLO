@@ -330,10 +330,14 @@ style(once='content')
   :postcss
     #content {
       .contents_style {
-        @apply text-left p-0 leading-loose text-h-200;
+        @apply text-left pt-8 border-t border-t-b-400 leading-loose text-b-900;
 
+        .another_category {
+          @apply p-8 rounded-[12px] border border-b-400;
+        }
+        
         a {
-          @apply text-h-blue decoration-0;
+          @apply text-b-900 decoration-0;
         }
 
         h2,
@@ -342,12 +346,12 @@ style(once='content')
           @apply my-5 font-medium scroll-mt-20;
 
           a {
-            @apply text-h-200;
+            @apply text-b-900;
           }
         }
 
         h2 {
-          @apply text-xl lg:text-2xl;
+          @apply text-xl lg:text-2xl mb-3;
         }
 
         h3 {
@@ -374,7 +378,7 @@ style(once='content')
         table[data-ke-align],
         blockquote[data-ke-style=style2],
         blockquote[data-ke-style=style3] {
-          @apply text-h-300;
+          @apply text-b-900;
 
           b,
           strong {
@@ -382,7 +386,7 @@ style(once='content')
           }
 
           a {
-            @apply inline-block text-h-blue;
+            @apply inline-block text-b-900;
           }
 
           code {
@@ -394,7 +398,7 @@ style(once='content')
         pre,
         table[data-ke-align],
         [data-ke-type=moreLess] {
-          @apply my-5;
+          @apply my-4;
         }
 
         hr {
@@ -404,17 +408,17 @@ style(once='content')
         table[data-ke-align] {
           td,
           th {
-            @apply bg-transparent border-0 border-b border-solid border-h-400 px-3 py-4 box-border text-sm leading-loose text-h-200;
+            @apply bg-transparent border-0 border-b border-b-400 px-3 py-4 box-border text-sm leading-loose text-b-900;
           }
         }
 
         figure {
           figcaption {
-            @apply text-h-400 text-center text-sm leading-loose;
+            @apply text-b-700 text-center text-sm leading-loose;
           }
 
           img {
-            @apply rounded-xl;
+            @apply rounded-[12px];
           }
 
           &.imageblock.alignCenter,
@@ -461,27 +465,28 @@ style(once='content')
               @apply border-0;
 
               .og-image {
-                @apply border-r-0 rounded-l-xl overflow-hidden;
+                @apply border-r-0 rounded-l-[12px] overflow-hidden;
               }
             }
 
             .og-text {
-              @apply bg-h-700 rounded-r-xl;
+              @apply bg-b-350/60 rounded-r-[12px];
 
               .og-title,
               .og-desc,
               .og-host {
-                @apply text-h-200 font-sans;
+                @apply text-b-900 font-sans font-bold;
               }
 
-              .og-title {
-                @apply text-h-600 font-bold;
+              .og-desc,
+              .og-host {
+                @apply text-b-800 font-normal;
               }
             }
           }
 
           &.fileblock {
-            @apply rounded-xl border-0 bg-h-700;
+            @apply rounded-xl border-0 bg-b-400;
 
             .filename {
               @apply mt-3;
@@ -493,7 +498,7 @@ style(once='content')
 
             .filename,
             .size {
-              @apply text-h-200;
+              @apply text-b-900;
             }
 
             .image,
@@ -507,7 +512,7 @@ style(once='content')
           @apply relative;
 
           &::before {
-            @apply content-[''] absolute top-4 right-0 w-full h-0 w-full -z-[1] border-b border-dashed border-h-400;
+            @apply content-[''] absolute top-4 right-0 w-full h-0 w-full -z-[1] border-b border-dashed border-b-400;
           }
 
           &.open {
@@ -517,7 +522,7 @@ style(once='content')
           }
 
           .btn-toggle-moreless {
-            @apply bg-h-700 text-h-200 text-sm font-bold rounded-xl px-3 py-1 inline-block;
+            @apply bg-b-400 text-b-900 text-sm font-bold rounded-xl px-3 py-1 inline-block;
 
             &::before {
               @apply mr-1.5 fa-circle-arrow-right;
@@ -530,27 +535,27 @@ style(once='content')
         }
 
         blockquote[data-ke-style] {
-          @apply font-[initial] my-4 text-h-200 font-sans;
+          @apply font-[initial] my-4 text-b-800 font-sans;
 
           &[data-ke-style=style1] {
-            @apply font-medium text-xl pt-7 leading-loose text-h-200;
+            @apply font-medium text-xl pt-7 leading-loose text-b-800;
           }
 
           &[data-ke-style=style2] {
-            @apply border-l-2 border-solid border-h-400 pl-3 pr-1 text-h-400 text-left text-sm leading-loose;
+            @apply border-l-2 border-solid border-b-800 pl-3 pr-1 text-b-800 text-left text-sm leading-loose;
           }
 
           &[data-ke-style=style3] {
-            @apply border-0 text-h-400 bg-h-700 leading-loose rounded-xl;
+            @apply border-0 text-b-800 bg-b-800 leading-loose rounded-xl;
           }
         }
 
         pre {
           code {
-            @apply px-4 leading-normal rounded-xl;
+            @apply px-8 py-4 leading-normal rounded-[12px];
 
             &.hljs {
-              @apply bg-h-700;
+              @apply bg-b-350/60 text-b-800 text-sm;
             }
           }
         }
@@ -561,11 +566,11 @@ style(once='content-postbtn')
   :postcss
     #content {
       .container_postbtn {
-        @apply p-0 pt-9 text-h-200;
+        @apply p-0 pt-8 mt-8 border-t border-b-400 text-b-900;
 
         .postbtn_like > .wrap_btn:not([id^=reaction-]) > button,
         .btn_subscription {
-          @apply w-9 h-9 inline-block shadow-none outline-0 rounded-md cursor-pointer duration-200 leading-none text-[0] p-0 bg-h-700 hover:bg-h-600 before:text-h-200;
+          @apply w-9 h-9 inline-block shadow-none outline-0 rounded-md cursor-pointer leading-none text-[0] p-0 bg-b-350 hover:bg-b-purple before:text-b-900;
         }
 
         .postbtn_like {
@@ -590,10 +595,10 @@ style(once='content-postbtn')
             }
 
             &[id^=reaction-] button {
-              @apply w-16 h-9 rounded-md bg-h-700 hover:bg-h-600;
+              @apply w-16 h-9 rounded-md bg-b-350 hover:bg-b-purple;
 
               .uoc-icon {
-                @apply text-h-200;
+                @apply text-b-900;
               }
 
               .uoc-count {
@@ -632,10 +637,10 @@ style(once='content-postbtn')
 style(once='content-tistory-ccl-layer')
   :postcss
     #tistoryCclLayer {
-      @apply shadow-none border-0 bg-h-700 text-h-300 rounded-md;
+      @apply shadow-none border-0 bg-b-400 text-b-900 rounded-md;
 
       span {
-        @apply text-h-400;
+        @apply text-b-900;
       }
 
       .ico_arrbt {
@@ -647,13 +652,13 @@ style(once='content-tistory-layer')
   :postcss
     #tistorySnsLayer,
     #tistoryEtcLayer {
-      @apply rounded-md shadow-none bg-h-700;
+      @apply rounded-md shadow-none bg-b-900;
 
       .btn_mark {
-        @apply text-h-300;
+        @apply text-b-900;
 
         &:hover {
-          @apply bg-h-600 text-h-200;
+          @apply bg-b-700 text-b-900;
         }
       }
 
@@ -662,6 +667,6 @@ style(once='content-tistory-layer')
       }
 
       .bundle_post a {
-        @apply text-h-300 no-underline;
+        @apply text-b-400 no-underline;
       }
     }

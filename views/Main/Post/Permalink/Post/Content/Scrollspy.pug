@@ -14,17 +14,17 @@ template(x-if='$data.headings.length > 0')
       button(
         x-show='! open'
         @click='toggle'
-        class='fixed top-20 right-0 w-8 h-8 z-30 rounded-md bg-h-700 text-h-200 2xl:hidden')
+        class='fixed top-20 right-0 w-8 h-8 z-30 rounded-md bg-b-350 hover:bg-b-purple text-b-900 2xl:hidden')
         span(class='text-hidden') 목차
         i(class='fa-solid fa-list-check')
       //- max-height: 100vh - (offset-top) - (bottom-button-height) - (extra-margin)
       div(
         :class='open ? "max-2xl:right-4" : "max-2xl:-right-60"'
-        class='max-h-[calc(100vh-theme(spacing.20)-theme(spacing.10)-theme(spacing.3)-2rem)] overflow-hidden w-56 text-sm box-border max-2xl:transition-[right] max-2xl:duration-200 max-2xl:rounded-xl max-2xl:fixed max-2xl:top-20 max-2xl:right-4 max-2xl:z-40 max-2xl:bg-h-700 2xl:block')
+        class='max-h-[calc(100vh-theme(spacing.20)-theme(spacing.10)-theme(spacing.3)-2rem)] overflow-hidden w-56 text-sm box-border max-2xl:transition-[right] max-2xl:duration-200 max-2xl:rounded-xl max-2xl:fixed max-2xl:top-20 max-2xl:right-4 max-2xl:z-40 max-2xl:bg-b-350 2xl:block')
         div(class='overflow-x-hidden overflow-y-scroll max-h-[inherit] w-[calc(theme(spacing.56)+theme(spacing.5))]')
           button(
             @click='toggle'
-            class='absolute text-base top-2 right-4 text-h-200 2xl:hidden')
+            class='absolute text-base top-2 right-4 text-b-900 2xl:hidden')
             span(class='text-hidden') 목차 닫기
             i(class='fa-solid fa-xmark')
           ol(
@@ -33,12 +33,12 @@ template(x-if='$data.headings.length > 0')
             template(x-for='heading in $data.headings' :key='heading.id')
               li(
                 :class='{ "pl-0": heading.tagName === "H2", "pl-4": heading.tagName === "H3" }'
-                class='text-h-400')
+                class='text-b-900 break-keep')
                 a(
                   :href='heading.href'
                   x-text='heading.text'
-                  :class='{ "text-h-200": heading.active }'
-                  class='duration-200 text-h-400 hover:text-h-200')
+                  :class='{ "text-b-900": heading.active }'
+                  class='duration-200 text-b-800 hover:text-b-900')
 
 script(once='alpine-scrollspy-component').
   document.addEventListener('alpine:init', () => Alpine.data('scrollspy', () => ({
