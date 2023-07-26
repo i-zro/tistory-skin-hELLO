@@ -1,5 +1,5 @@
 s_paging
-  ul#paging(class='flex justify-center items-center mt-8 lg:mt-20')
+  ul#paging(class='relative z-40 flex justify-center items-center mt-8 lg:mt-12')
     li
       a([##_prev_page_##] class='[##_no_more_prev_##]')
         span(class='text-hidden') 이전
@@ -25,7 +25,7 @@ style
 
       i,
       span {
-        @apply w-8 h-8 leading-8 text-center mx-1 text-base text-h-300;
+        @apply w-8 h-8 leading-8 text-center mx-1 text-base text-b-700;
       }
 
       span:not(.selected) {
@@ -33,6 +33,6 @@ style
       }
 
       .selected {
-        @apply rounded-full bg-h-600 inline-block text-h-200;
+        @apply rounded-full bg-b-350 inline-block text-b-900;
       }
     }

@@ -17,14 +17,14 @@ mixin coverDescriptionIfContent(featured=false)
     unless featured
       a.category(
         href='[##_cover_item_category_url_##]'
-        class='text-sm text-h-400') [##_cover_item_category_##]
+        class='text-sm text-b-900') [##_cover_item_category_##]
     h2
       a(
         href='[##_cover_item_url_##]'
         class='text-h-200') [##_cover_item_title_##]
     unless featured
-      time(class='text-h-400 text-sm') [##_cover_item_simple_date_##]
-      p(class='relative overflow-hidden leading-7 text-h-400') [##_cover_item_summary_##]
+      time(class='text-b-700 text-sm') [##_cover_item_simple_date_##]
+      p(class='relative overflow-hidden leading-7 text-b-700') [##_cover_item_summary_##]
 
 mixin coverDescriptionIfNotContent(featured=false)
   .description(class='flex flex-col')&attributes(attributes)

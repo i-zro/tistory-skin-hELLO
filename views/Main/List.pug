@@ -1,25 +1,16 @@
 s_list
   section(
       data-mode='[##_list_style_##]')
-    header(class='relative h-[20em] flex justify-center items-center')
+    header(class='relative lg:w-idx lg:mx-auto')
       //- s_list_image
         //- .thumbnail(class='absolute right-0 top-0 w-full h-[20em] before:content-[""] before:absolute before:right-0 before:top-0 before:w-full before:h-[20em] before:bg-h-300/80 before:z-10 [&+.description]:text-h-800')
         //-   img(
         //-     src='[##_list_image_##]'
         //-     alt=''
         //-     class='absolute top-0 w-full h-[20em] z-0 object-cover')
-      .description(class='flex flex-col items-center z-20 relative mx-4 text-center text-b-900 lg:mx-0')
-        h1(class='font-bold text-2xl lg:text-3xl') [##_list_conform_##]
-        span(class='font-bold mt-[0.5em] empty:mt-0') [##_list_description_##]
-      //- .wave(class='absolute left-0 bottom-[-1px] z-20 w-[100%] h-[2.5em]')
-      //-   svg(class='waves w-[100%] h-[100%]' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 24 150 28' preserveAspectRatio='none' shape-rendering='auto')
-      //-     defs
-      //-       path(id='gentle-wave' d='M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z')
-      //-     g(class='parallax')
-      //-       use(xlink:href='#gentle-wave' x='48' y='0' class='fill-h-200/70')
-      //-       use(xlink:href='#gentle-wave' x='48' y='3' class='fill-h-200/50')
-      //-       use(xlink:href='#gentle-wave' x='48' y='5' class='fill-h-200/30')
-      //-       use(xlink:href='#gentle-wave' x='48' y='7' class='fill-h-200')
+      .description(class='flex flex-col justify-start items-start mt-10 mb-8 text-b-900')
+        h1(class='font-bold text-xl lg:text-2xl') [##_list_conform_##]
+        span(class='mt-[0.5em] empty:mt-0') [##_list_description_##]
     .list(
       x-ref='list'
       class='px-4 lg:px-0 lg:w-idx lg:mx-auto')
@@ -30,11 +21,11 @@ style
   :postcss
     [data-mode=list] {
       .list {
-        @apply flex flex-col gap-y-6 sm:gap-y-0;
+        @apply flex flex-col gap-y-6 sm:gap-y-0 rounded-[12px] bg-b-350/60 p-8;
       }
 
       .post {
-        @apply flex flex-col gap-y-4 sm:flex-row-reverse sm:items-center sm:justify-end sm:gap-x-6 sm:h-72 sm:border-t sm:border-solid sm:border-h-400;
+        @apply flex flex-col gap-y-4 sm:flex-row-reverse sm:items-center sm:justify-end sm:gap-x-6 sm:h-72 sm:border-t sm:border-solid sm:border-b-400;
 
         .thumbnail {
           img {
@@ -115,7 +106,7 @@ style
         }
 
         &::before {
-          @apply content-[''] top-[calc(100%+theme(spacing.6))] left-[calc(100%/2)] lg:top-[calc(100%+theme(spacing.6))] lg:left-[calc(theme('screens.lg')/2)] absolute w-0.5 h-12 lg:h-16 bg-h-600;
+          @apply content-[''] top-[calc(100%+theme(spacing.6))] left-[calc(100%/2)] lg:top-[calc(100%+theme(spacing.6))] lg:left-[calc(theme('screens.lg')/2)] absolute w-0.5 h-12 lg:h-16 bg-b-400;
         }
 
         .thumbnail {
@@ -125,7 +116,7 @@ style
         }
 
         .description {
-          @apply bg-h-700 gap-y-2 p-10 lg:p-16;
+          @apply bg-b-700 gap-y-2 p-10 lg:p-16;
 
           h2 {
             @apply text-xl lg:text-2xl font-bold;

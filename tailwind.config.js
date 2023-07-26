@@ -32,6 +32,7 @@ module.exports = {
         100: '#060607',
         200: '#1F2127',
         300: '#252731',
+        350: '#2F323B',
         400: '#434653',
         500: '#555863',
         600: '#6E717D',
@@ -58,6 +59,9 @@ module.exports = {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' }
         }
+      },
+      dropShadow: {
+        dark: '1px 2px 4px #252731'
       },
       animation: {
         loading: 'loading 1s linear infinite'
