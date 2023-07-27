@@ -1,6 +1,6 @@
 mixin comment(type, replyable=true)
   div(
-    class=`[##_${type}_rep_class_##] flex flex-col gap-y-4 relative before:content-[''] before:absolute before:w-[1px] before:h-[calc(100%-65px)] before:left-[calc(theme(spacing.12)/2)] before:top-16 before:bg-h-400`)
+    class=`[##_${type}_rep_class_##] flex flex-col gap-y-4 relative before:content-[''] before:absolute before:w-[1px] before:h-[calc(100%-65px)] before:left-[calc(theme(spacing.12)/2)] before:top-16 before:bg-h-600 before:dark:bg-b-400`)
     div
       div(class='flex items-center gap-x-4')
         img.lazyload(
@@ -42,7 +42,7 @@ mixin list(type, rType, reverse=false)
             x-data='{ open: ! skinOptions.foldableReply, children: [] }'
             id=`[##_${type}_rep_id_##]`
             :class='{ "[&>div]:before:hidden": children.length === 0 }'
-            class='flex flex-col gap-y-5 border-b border-dotted border-b-400 pb-5')
+            class='flex flex-col gap-y-5 border-b border-dotted border-h-600 dark:border-b-400 pb-5')
             +comment(type)
             #{`s_${rType}_container`}
               ol(
@@ -59,10 +59,10 @@ style
   :postcss
     #comments {
       .tt_more_preview_comments_wrap {
-        @apply my-4 text-sm bg-b-350/60 text-b-900 rounded-xl py-3 px-4 duration-200;
+        @apply my-4 text-sm bg-h-700/60 dark:bg-b-350/60 text-h-400 dark:text-b-900 rounded-xl py-3 px-4 duration-200;
 
         &:hover {
-          @apply bg-b-purple;
+          @apply bg-h-yellow dark:bg-b-purple text-h-200 dark:text-b-900;
         }
 
         &::after {

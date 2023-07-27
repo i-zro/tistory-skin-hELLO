@@ -330,14 +330,14 @@ style(once='content')
   :postcss
     #content {
       .contents_style {
-        @apply text-left pt-8 border-t border-t-b-400 leading-loose text-b-900;
+        @apply text-left pt-8 border-t border-t-h-600 dark:border-t-b-400 leading-loose text-h-200 dark:text-b-900;
 
         .another_category {
-          @apply p-8 rounded-[12px] border border-b-400;
+          @apply p-8 rounded-[12px] border border-h-200 dark:border-b-400;
         }
         
         a {
-          @apply text-b-900 decoration-0;
+          @apply text-h-200 dark:text-b-900 decoration-0;
         }
 
         h2,
@@ -346,7 +346,7 @@ style(once='content')
           @apply my-5 font-medium scroll-mt-20;
 
           a {
-            @apply text-b-900;
+            @apply text-h-200 dark:text-b-900;
           }
         }
 
@@ -378,7 +378,7 @@ style(once='content')
         table[data-ke-align],
         blockquote[data-ke-style=style2],
         blockquote[data-ke-style=style3] {
-          @apply text-b-900;
+          @apply text-h-200 dark:text-b-900;
 
           b,
           strong {
@@ -408,13 +408,13 @@ style(once='content')
         table[data-ke-align] {
           td,
           th {
-            @apply bg-transparent border-0 border-b border-b-400 px-3 py-4 box-border text-sm leading-loose text-b-900;
+            @apply bg-transparent border-0 border-b border-h-600 dark:border-b-400 px-3 py-4 box-border text-sm leading-loose text-h-200 dark:text-b-900;
           }
         }
 
         figure {
           figcaption {
-            @apply text-b-700 text-center text-sm leading-loose;
+            @apply text-h-500 dark:text-b-700 text-center text-sm leading-loose;
           }
 
           img {
@@ -535,18 +535,18 @@ style(once='content')
         }
 
         blockquote[data-ke-style] {
-          @apply font-[initial] my-4 text-b-800 font-sans;
+          @apply font-[initial] my-4 text-h-500 dark:text-b-800 font-sans;
 
           &[data-ke-style=style1] {
-            @apply font-medium text-xl pt-7 leading-loose text-b-800;
+            @apply font-medium text-xl pt-7 leading-loose text-h-500 dark:text-b-800;
           }
 
           &[data-ke-style=style2] {
-            @apply border-l-2 border-solid border-b-800 pl-3 pr-1 text-b-800 text-left text-sm leading-loose;
+            @apply border-l-2 border-solid border-h-600 dark:border-b-800 pl-3 pr-1 text-h-500 dark:text-b-800 text-left text-sm leading-loose;
           }
 
           &[data-ke-style=style3] {
-            @apply border-0 text-b-800 bg-b-800 leading-loose rounded-xl;
+            @apply border-0 text-h-500 dark:text-b-800 bg-h-700/60 dark:bg-b-800 leading-loose rounded-xl;
           }
         }
 
@@ -555,7 +555,7 @@ style(once='content')
             @apply px-8 py-4 leading-normal rounded-[12px];
 
             &.hljs {
-              @apply bg-b-350/60 text-b-800 text-sm;
+              @apply bg-h-700/60 dark:bg-b-350/60 text-h-400 dark:text-b-800 text-sm;
             }
           }
         }
@@ -566,11 +566,16 @@ style(once='content-postbtn')
   :postcss
     #content {
       .container_postbtn {
-        @apply p-0 pt-8 mt-8 border-t border-b-400 text-b-900;
+        @apply p-0 pt-8 mt-8 border-t border-h-600 dark:border-b-400 text-b-900;
 
         .postbtn_like > .wrap_btn:not([id^=reaction-]) > button,
         .btn_subscription {
-          @apply w-9 h-9 inline-block shadow-none outline-0 rounded-md cursor-pointer leading-none text-[0] p-0 bg-b-350 hover:bg-b-purple before:text-b-900;
+          @apply w-9 h-9 inline-block shadow-none outline-0 rounded-md cursor-pointer leading-none text-[0] p-0 bg-h-700/60 hover:bg-h-yellow dark:bg-b-350 hover:dark:bg-b-purple before:text-h-400 before:dark:text-b-900;
+        }
+
+        .postbtn_like > .wrap_btn:not([id^=reaction-]) > button:hover,
+        .btn_subscription:hover {
+          @apply before:text-h-200 before:dark:text-b-900
         }
 
         .postbtn_like {
@@ -595,10 +600,10 @@ style(once='content-postbtn')
             }
 
             &[id^=reaction-] button {
-              @apply w-16 h-9 rounded-md bg-b-350 hover:bg-b-purple;
+              @apply w-16 h-9 rounded-md bg-h-700/60 hover:bg-h-yellow dark:bg-b-350 hover:dark:bg-b-purple;
 
               .uoc-icon {
-                @apply text-b-900;
+                @apply text-h-400 dark:text-b-900;
               }
 
               .uoc-count {
@@ -607,6 +612,12 @@ style(once='content-postbtn')
                 &::before {
                   @apply text-sm mr-1.5 fa-heart;
                 }
+              }
+            }
+
+            &[id^=reaction-] button:hover {
+              .uoc-icon {
+                @apply text-h-200 dark:text-b-900;
               }
             }
 

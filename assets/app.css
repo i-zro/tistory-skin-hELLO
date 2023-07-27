@@ -18,11 +18,11 @@ textarea::-webkit-scrollbar {
 /* https://github.com/aFarkas/lazysizes#css-api */
 .lazyload,
 .lazyloading {
-  @apply animate-pulse bg-h-700;
+  @apply animate-pulse bg-h-700/60 dark:bg-b-350/60;
 }
 
 .lazyloaded {
-  @apply animate-none bg-h-100;
+  @apply animate-none bg-transparent;
 }
 
 .lazyload:not([src]) {

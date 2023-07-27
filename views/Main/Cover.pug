@@ -10,30 +10,30 @@ mixin coverImage()
         data-src='[##_cover_item_thumbnail_##]'
         data-sizes='auto'
         alt=''
-        class='object-cover bg-b-350')&attributes(attributes)
+        class='object-cover bg-h-700/60 dark:bg-b-350')&attributes(attributes)
 
 mixin coverDescriptionIfContent(featured=false)
   .description(class='flex flex-col')&attributes(attributes)
     unless featured
       a.category(
         href='[##_cover_item_category_url_##]'
-        class='text-sm text-b-900') [##_cover_item_category_##]
+        class='text-sm text-h-400 dark:text-b-900') [##_cover_item_category_##]
     h2
       a(
         href='[##_cover_item_url_##]'
-        class='text-b-900') [##_cover_item_title_##]
+        class='text-h-200 dark:text-b-900') [##_cover_item_title_##]
     unless featured
-      time(class='text-b-700 text-sm') [##_cover_item_simple_date_##]
-      p(class='relative overflow-hidden leading-7 text-b-700') [##_cover_item_summary_##]
+      time(class='text-h-400 dark:text-b-700 text-sm') [##_cover_item_simple_date_##]
+      p(class='relative overflow-hidden leading-7 text-h-400 dark:text-b-700') [##_cover_item_summary_##]
 
 mixin coverDescriptionIfNotContent(featured=false)
   .description(class='flex flex-col')&attributes(attributes)
     h2
       a(
         href='[##_cover_item_url_##]'
-        class='text-b-900') [##_cover_item_title_##]
+        class='text-h-200 dark:text-b-900') [##_cover_item_title_##]
     unless featured
-      p(class='text-b-700') [##_cover_item_summary_##]
+      p(class='text-h-400 dark:text-b-700') [##_cover_item_summary_##]
 
 mixin coverDescription(featured=false)
   s_cover_item_article_info
@@ -45,7 +45,7 @@ mixin coverList(mode, featured=false)
   section(
     data-mode=mode
     class='flex flex-col items-center px-4 lg:px-0 lg:w-idx lg:mx-auto')
-    div(class='text-3xl font-bold text-b-900 my-10 empty:my-10 lg:my-20') [##_cover_title_##]
+    div(class='text-3xl font-bold text-h-200 dark:text-b-900 my-10 empty:my-10 lg:my-20') [##_cover_title_##]
     .list
       +coverItem()
         +coverImage()
@@ -58,9 +58,9 @@ mixin coverSlideshow()
     div(
       class='swiper w-full h-screen')
       .list(class='swiper-wrapper')
-        +coverItem()(class='swiper-slide flex justify-center items-center before:absolute before:right-0 before:top-0 before:w-full before:h-screen before:bg-b-350 before:z-10')
+        +coverItem()(class='swiper-slide flex justify-center items-center before:absolute before:right-0 before:top-0 before:w-full before:h-screen before:bg-h-700/60 before:dark:bg-b-350 before:z-10')
           +coverImage()(class='w-screen h-screen object-cover')
-          +coverDescription(true)(class='text-b-900 absolute w-screen h-screen flex flex-col justify-center items-center gap-y-2 text-center z-20 [&_h2]:px-4 [&_a]:text-b-900 [&_a]:text-4xl [&_a]:font-bold')
+          +coverDescription(true)(class='text-h-200 dark:text-b-900 absolute w-screen h-screen flex flex-col justify-center items-center gap-y-2 text-center z-20 [&_h2]:px-4 [&_a]:text-h-200 [&_a]:dark:text-b-900 [&_a]:text-4xl [&_a]:font-bold')
       div(class='swiper-button-next')
       div(class='swiper-button-prev')
 
