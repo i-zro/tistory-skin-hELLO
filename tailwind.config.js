@@ -16,17 +16,15 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       h: {
-        100: '#FFFFFF',
-        200: '#C0CFFA',
-        300: '#9DADDF',
-        400: '#7D8EC4',
-        500: '#6171A9',
-        600: '#48578E',
-        700: '#334173',
-        800: '#1F2127',
-        900: '#000028',
-        blue: '#5db0d7',
-        orange: '#ff5544'
+        100: '#1B1D21',
+        200: '#37373B',
+        300: '#464B50',
+        400: '#7E7F86',
+        500: '#9B9CA2',
+        600: '#B0B1B6',
+        700: '#DFDFE1',
+        800: '#F8F8F9',
+        900: '#FFFFFF'
       },
       b: {
         100: '#060607',
@@ -61,9 +59,6 @@ module.exports = {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' }
         }
-      },
-      dropShadow: {
-        dark: '1px 2px 4px #252731'
       },
       animation: {
         loading: 'loading 1s linear infinite'

@@ -1,7 +1,7 @@
 .sidebar-element
   #category(
     x-data='category'
-    class='pt-6 border-t border-b-400'
+    class='pt-6 border-t border-h-700 dark:border-b-400'
   )
     | [##_category_list_##]
 
@@ -80,7 +80,7 @@ style
           }
 
           .link_tit {
-            @apply text-sm font-bold mb-3 px-3 inline-block text-b-900;
+            @apply text-sm font-bold mb-3 px-3 inline-block text-h-200 dark:text-b-900;
           }
 
           ul {
@@ -100,7 +100,7 @@ style
               @apply first:mt-4;
 
               .link_sub_item::before {
-                @apply mr-1 fa-chevron-right font-bold text-b-700 text-sm;
+                @apply mr-1 fa-chevron-right font-bold text-h-500 dark:text-b-700 text-sm;
               }
             }
           }
