@@ -100,3 +100,7 @@ textarea::-webkit-scrollbar {
 #tt-body-page .another_category {
   display: none !important;
 }
+
+.dark .popular-posts:hover .date {
+  color: '#EDEDEF';
+}

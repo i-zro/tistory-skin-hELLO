@@ -24,7 +24,8 @@ module.exports = {
         600: '#B0B1B6',
         700: '#DFDFE1',
         800: '#F8F8F9',
-        900: '#FFFFFF'
+        900: '#FFFFFF',
+        yellow: '#FFD300'
       },
       b: {
         100: '#060607',

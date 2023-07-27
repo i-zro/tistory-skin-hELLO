@@ -63,21 +63,25 @@ style
         .hashtag:hover i,
         .recent-comments:hover i,
         .recent-comments:hover div {
-          @apply dark:text-b-900;
-        }
-
-        .hashtag:hover i {
-          @apply text-h-800;
-        }
-
-        .recent-comments:hover i,
-        .recent-comments:hover div
-        .recent-comments:hover a:not(.link_tit) {
-          @apply text-h-200;
+          @apply text-h-200 dark:text-b-900;
         }
 
         a:not(.link_tit) {
-          @apply text-h-500 hover:text-h-800 dark:text-b-700 dark:hover:text-b-900;
+          @apply text-h-500 hover:text-h-200 dark:text-b-700 dark:hover:text-b-900;
+        }
+
+        a.recent-comments:not(.link_tit) {
+          @apply hover:text-h-200 hover:dark:text-b-900;
+        }
+
+        a.recent-comments:not(.link_tit):hover {
+          i {
+            @apply text-h-200 dark:text-b-900;
+          }
+        }
+
+        #copyright a:not(link_tit) {
+          @apply hover:text-h-200 hover:dark:text-b-900;
         }
 
         .link_item {

@@ -5,13 +5,13 @@
         data-src=`[##_${type}_rep_thumbnail${type === 'list' ? '' : '_url'}_##]`
         data-sizes='auto'
         alt=''
-        class='object-cover bg-b-900')
+        class='object-cover bg-h-800 dark:bg-b-900')
   .description(class='flex flex-col')
     if hasCategory
       div(class='flex flex-row items-center')
         a(
           href=`[##_${type}_rep_category_link_##]`
-          class='block bg-b-400 hover:bg-b-purple px-3 py-2 rounded-full leading-none text-sm text-b-900 mr-2') #{`[##_${type}_rep_category_##]`}
+          class='block bg-h-700 hover:bg-h-yellow dark:bg-b-400 hover:dark:bg-b-purple px-3 py-2 rounded-full leading-none text-sm text-h-400 hover:text-h-200 dark:text-b-900 mr-2') #{`[##_${type}_rep_category_##]`}
         time(class='text-b-700 text-sm') #{`[##_${type}_rep_${type === 'list' ? 'regdate' : 'date'}_##]`}
     h2
       a(
