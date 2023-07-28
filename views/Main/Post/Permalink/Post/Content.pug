@@ -470,23 +470,23 @@ style(once='content')
             }
 
             .og-text {
-              @apply bg-b-350/60 rounded-r-[12px];
+              @apply bg-h-700/60 dark:bg-b-350/60 rounded-r-[12px];
 
               .og-title,
               .og-desc,
               .og-host {
-                @apply text-b-900 font-sans font-bold;
+                @apply text-h-200 dark:text-b-900 font-sans font-bold;
               }
 
               .og-desc,
               .og-host {
-                @apply text-b-800 font-normal;
+                @apply text-h-400 dark:text-b-800 font-normal;
               }
             }
           }
 
           &.fileblock {
-            @apply rounded-xl border-0 bg-b-400;
+            @apply rounded-xl border-0 bg-h-700/60 dark:bg-b-400;
 
             .filename {
               @apply mt-3;
@@ -498,7 +498,7 @@ style(once='content')
 
             .filename,
             .size {
-              @apply text-b-900;
+              @apply text-h-200 dark:text-b-900;
             }
 
             .image,
@@ -512,7 +512,7 @@ style(once='content')
           @apply relative;
 
           &::before {
-            @apply content-[''] absolute top-4 right-0 w-full h-0 w-full -z-[1] border-b border-dashed border-b-400;
+            @apply content-[''] absolute top-4 right-0 w-full h-0 w-full -z-[1] border-b border-dashed border-h-600 dark:border-b-400;
           }
 
           &.open {
@@ -522,7 +522,7 @@ style(once='content')
           }
 
           .btn-toggle-moreless {
-            @apply bg-b-400 text-b-900 text-sm font-bold rounded-xl px-3 py-1 inline-block;
+            @apply bg-h-700/60 dark:bg-b-400 text-h-200 dark:text-b-900 text-sm font-bold rounded-xl px-3 py-1 inline-block;
 
             &::before {
               @apply mr-1.5 fa-circle-arrow-right;
@@ -648,10 +648,10 @@ style(once='content-postbtn')
 style(once='content-tistory-ccl-layer')
   :postcss
     #tistoryCclLayer {
-      @apply shadow-none border-0 bg-b-400 text-b-900 rounded-md;
+      @apply shadow-none border-0 bg-h-800 dark:bg-b-200 text-h-200 dark:text-b-900 rounded-md;
 
       span {
-        @apply text-b-900;
+        @apply text-h-200 dark:text-b-900;
       }
 
       .ico_arrbt {
@@ -663,13 +663,13 @@ style(once='content-tistory-layer')
   :postcss
     #tistorySnsLayer,
     #tistoryEtcLayer {
-      @apply rounded-md shadow-none bg-b-900;
+      @apply rounded-md shadow-none bg-h-800 dark:bg-b-200;
 
       .btn_mark {
-        @apply text-b-900;
+        @apply text-h-200 dark:text-b-900;
 
         &:hover {
-          @apply bg-b-700 text-b-900;
+          @apply bg-h-700 dark:bg-b-700 text-h-200 dark:text-b-900;
         }
       }
 
@@ -678,6 +678,6 @@ style(once='content-tistory-layer')
       }
 
       .bundle_post a {
-        @apply text-b-400 no-underline;
+        @apply text-h-400 dark:text-b-400 no-underline;
       }
     }

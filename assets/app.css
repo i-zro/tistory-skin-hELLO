@@ -93,7 +93,10 @@ textarea::-webkit-scrollbar {
 
 /* 오픈그래프 */
 #tt-body-page #content .contents_style figure[data-ke-type=opengraph] .og-text .og-title {
-  color: #f4f4f6;
+  color: #37373B;
+}
+.dark #tt-body-page #content .contents_style figure[data-ke-type=opengraph] .og-text .og-title {
+  color: #EDEDEF;
 }
 
 /* 카테고리의 다른 글 (중복된 거 없앰) */
