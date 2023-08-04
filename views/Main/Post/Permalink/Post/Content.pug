@@ -401,11 +401,19 @@ style(once='content')
           @apply my-3;
         }
 
+        figure {
+          @apply my-1;
+        }
+
         hr {
           @apply invert brightness-0;
         }
 
         table[data-ke-align] {
+          tr {
+            @apply border-t border-h-600 dark:border-b-400
+          }
+
           td,
           th {
             @apply bg-transparent border-0 border-b border-h-600 dark:border-b-400 p-3 box-border text-sm leading-normal text-h-200 dark:text-b-900;
