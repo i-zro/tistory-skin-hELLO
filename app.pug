@@ -22,6 +22,9 @@ html#hELLO(
     //- 스위트
     link(rel="stylesheet" :href='"https://cdn.jsdelivr.net/gh/fonts-archive/SUITE/SUITE.css"')
 
+    //- FuckAdBlock
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.js')
+
     style(fixed).
       :root {
         --h-width: [##_var_width_##]px;
@@ -47,6 +50,42 @@ html#hELLO(
       if (! ('TTDARK' in localStorage)) { localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'N'; }
       window.TTDARK = localStorage.TTDARK === 'Y';
       document.documentElement.classList.toggle('dark', TTDARK);
+
+    script(fixed).
+      // AdBlock이 감지안되면 실행할 함수
+      function adBlockNotDetected() {
+        document.addEventListener('DOMContentLoaded', () => {
+          document.getElementById("adblock-detector").style.display = "none";
+        });
+      }
+      // AdBlock이 감지되면 실행할 함수
+      function adBlockDetected() {
+        document.addEventListener('DOMContentLoaded', () => {
+          document.getElementById("adblock-detector").style.display = "block";
+        });
+      }
+
+      // FuckAdBlock이 존재하는지 확인하는 함수
+      if(typeof fuckAdBlock !== 'undefined' || typeof FuckAdBlock !== 'undefined') {
+        // AdBlock이 감지됨
+        adBlockDetected();
+      } else {
+        // FuckAdBlock Script 가져오기
+        var importFAB = document.createElement('script');
+        importFAB.onload = function() {
+          // FuckAdBlock 실행
+          fuckAdBlock.onDetected(adBlockDetected)
+          fuckAdBlock.onNotDetected(adBlockNotDetected);
+        };
+        importFAB.onerror = function() {
+          // Script가 실행이 안되면
+          adBlockDetected(); 
+        };
+        importFAB.integrity = 'sha256-xjwKUY/NgkPjZZBOtOxRYtK20GaqTwUCf7WYCJ1z69w=';
+        importFAB.crossOrigin = 'anonymous';
+        importFAB.src = 'https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js';
+        document.head.appendChild(importFAB);
+      }
 
   body(
     id='[##_body_id_##]'
