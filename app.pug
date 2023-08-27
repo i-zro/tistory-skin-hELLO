@@ -23,7 +23,7 @@ html#hELLO(
     link(rel="stylesheet" :href='"https://cdn.jsdelivr.net/gh/fonts-archive/SUITE/SUITE.css"')
 
     //- FuckAdBlock
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.js')
+    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js' integrity='sha256-xjwKUY/NgkPjZZBOtOxRYtK20GaqTwUCf7WYCJ1z69w=' crossOrigin="anonymouse")
 
     style(fixed).
       :root {
@@ -51,17 +51,21 @@ html#hELLO(
       window.TTDARK = localStorage.TTDARK === 'Y';
       document.documentElement.classList.toggle('dark', TTDARK);
 
-    script(fixed).
+    //- script(fixed).
       // AdBlock이 감지안되면 실행할 함수
       function adBlockNotDetected() {
         document.addEventListener('DOMContentLoaded', () => {
-          document.getElementById("adblock-detector").style.display = "none";
+          document.body.classList.add("adblock-not-detected");
+          document.body.classList.remove("adblock-detected");
+          console.log("AdBlock not detected");
         });
       }
       // AdBlock이 감지되면 실행할 함수
       function adBlockDetected() {
         document.addEventListener('DOMContentLoaded', () => {
-          document.getElementById("adblock-detector").style.display = "flex";
+          document.body.classList.add("adblock-detected");
+          document.body.classList.remove("adblock-not-detected");
+          console.log("AdBlock detected");
         });
       }
 
