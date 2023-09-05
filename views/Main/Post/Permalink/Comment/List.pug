@@ -11,10 +11,10 @@ mixin comment(type, replyable=true)
           height='48'
           class='rounded-full')
         div
-          div(class='text-sm font-bold text-b-900 [&_img]:hidden') #{`[##_${type}_rep_name_##]`}
-          time(class='text-b-700 text-xs') #{`[##_${type}_rep_date_##]`}
-    div(class='pl-16 leading-7 text-sm text-b-900') #{`[##_${type}_rep_desc_##]`}
-    div(class='pl-16 flex gap-x-1 text-b-700 text-xs')
+          div(class='text-sm font-bold text-h-200 dark:text-b-900 [&_img]:hidden') #{`[##_${type}_rep_name_##]`}
+          time(class='text-h-400 dark:text-b-700 text-xs') #{`[##_${type}_rep_date_##]`}
+    div(class='pl-16 leading-7 text-sm text-h-200 dark:text-b-900') #{`[##_${type}_rep_desc_##]`}
+    div(class='pl-16 flex gap-x-1 text-h-400 dark:text-b-700 text-xs')
       a(
         href='#'
         onclick=`[##_${type}_rep_onclick_delete_##]`) 수정/삭제
