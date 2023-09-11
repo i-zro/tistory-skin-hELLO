@@ -387,13 +387,29 @@ style(once='content')
         ol[data-ke-list-type],
         ul[data-ke-list-type],
         table[data-ke-align],
-        blockquote[data-ke-style=style2],
         blockquote[data-ke-style=style3] {
-          @apply text-h-200 dark:text-b-800;
+          @apply text-h-200 dark:text-b-900;
 
           b,
           strong {
-            @apply font-bold dark:text-b-900;
+            @apply font-bold;
+          }
+
+          a {
+            @apply inline-block text-b-blue hover:underline;
+          }
+
+          code {
+            @apply relative -top-[1px] px-2 py-0.5 rounded-md whitespace-normal text-sm font-sans text-h-300 bg-h-700;
+          }
+        }
+
+        blockquote[data-ke-style=style2] {
+          @apply text-h-500 dark:text-b-700;
+
+          b,
+          strong {
+            @apply font-bold;
           }
 
           a {
@@ -561,11 +577,11 @@ style(once='content')
           }
 
           &[data-ke-style=style2] {
-            @apply border-l-2 border-solid border-h-600 dark:border-b-800 pl-3 pr-1 text-h-500 dark:text-b-800 text-left text-sm leading-loose;
+            @apply border-l-2 border-solid border-h-600/60 dark:border-b-600 pl-3 pr-1 text-h-500 dark:text-b-800 text-left text-sm leading-loose;
           }
 
           &[data-ke-style=style3] {
-            @apply border-0 text-h-500 dark:text-b-800 bg-h-700/60 dark:bg-b-800 leading-loose rounded-xl;
+            @apply border-0 text-h-500 dark:text-b-800 bg-h-800 dark:bg-b-800 leading-loose rounded-xl;
           }
         }
 
