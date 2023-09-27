@@ -1,18 +1,9 @@
 div(
-  x-data='top'
-  @scroll.window='toggle'
-  x-show='open'
-  x-transition:enter='transition ease-linear duration-300'
-  x-transition:enter-start='opacity-0'
-  x-transition:enter-end='opacity-100'
-  x-transition:leave='transition ease-linear duration-300'
-  x-transition:leave-start='opacity-100'
-  x-transition:leave-end='opacity-0'
-  class='w-full box-border px-4 h-14 top-0 fixed flex justify-between items-center z-30 backdrop-blur bg-h-800/80 xl:px-5 <s_if_var_sidebar>xl:w-c</s_if_var_sidebar>')
+  class='w-content pl-3 xl:pl-4 pt-3 xl:pt-4 box-border top-0 fixed flex justify-between items-center z-30 <s_if_var_sidebar></s_if_var_sidebar>')
   div
     img.lazyload(
       @click='sidebar = ! sidebar'
-      class='rounded-full w-9 h-9 cursor-pointer <s_if_var_sidebar>xl:invisible</s_if_var_sidebar>'
+      class='rounded-full w-9 h-9 cursor-pointer <s_if_var_sidebar></s_if_var_sidebar>'
       data-src='[##_image_##]'
       data-sizes='auto'
       alt='[##_blogger_##]'
@@ -20,13 +11,13 @@ div(
       height='36')
   div
     div(class='m-0 text-sm font-bold h-5 text-overflow-hidden max-w-[calc(80vw-152px)] text-h-200') [##_page_title_##]
-  div
-    button.subscription(
-      :data-blog-id='T.config.BLOG.id'
-      :data-url='TistoryBlog.tistoryUrl'
-      class='flex justify-center items-center w-10 h-10 outline-0 rounded-full text-b-white border border-b-400 bg-b-200 hover:bg-b-300 btn_menu_toolbar btn_subscription #subscribe')
-      span(class='text-hidden') 구독하기
-      i(class='fa-solid fa-star font-bold text-sm')
+  //- div
+  //-   button.subscription(
+  //-     :data-blog-id='T.config.BLOG.id'
+  //-     :data-url='TistoryBlog.tistoryUrl'
+  //-     class='flex justify-center items-center w-10 h-10 outline-0 rounded-full text-b-white border border-b-400 bg-b-200 hover:bg-b-300 btn_menu_toolbar btn_subscription #subscribe')
+  //-     span(class='text-hidden') 구독하기
+  //-     i(class='fa-solid fa-star font-bold text-sm')
 
 script.
   document.addEventListener('alpine:init', () => Alpine.data('top', () => ({

@@ -9,7 +9,7 @@ template(x-if='$data.headings.length > 0')
         li(:class='{ "pl-0": heading.tagName === "H2", "pl-4": heading.tagName === "H3" }')
           a(
             :href='heading.href'
-            class='flex items-center justify-between text-sm duration-200 text-h-400 hover:text-h-200 dark:text-b-800 hover:dark:text-b-900')
+            class='flex items-center justify-between text-sm duration-200 text-h-300/80 hover:text-h-100 dark:text-b-900/80 hover:dark:text-b-white')
             div(
               x-text='heading.text'
               class='text-overflow-hidden')

@@ -1,16 +1,18 @@
 #bottom(class='flex justify-end box-border fixed text-sm z-40 bottom-3 xl:bottom-4 right-3 xl:right-4')
   div(class='flex flex-col gap-y-3')
     button.subscription(
+      x-data='{ subscribed: T.config.SUBSCRIPTION.isConnected }'
       :data-blog-id='T.config.BLOG.id'
       :data-url='TistoryBlog.tistoryUrl'
+      @click='subscribed = ! subscribed'
       class='flex justify-center items-center w-10 h-10 outline-0 rounded-full btn_menu_toolbar btn_subscription #subscribe')
       span(class='text-hidden') 구독하기
-      i(class='fa-solid fa-star font-bold text-sm')
+      i(:class='subscribed ? "fa-solid fa-star" : "fa-regular fa-star"' class='text-sm' id='bottom_subscribe_btn')
     button(
       x-data='theme'
       @click='toggle')
       span(class='text-hidden') 테마
-      i(class='fa-solid fa-moon text-base')
+      i(:class='localStorage.TTDARK === "Y" ? "fa-moon" : "fa-sun"' class='fa-solid text-base' id='bottom_toggle_btn')
     a(href='#hELLO')
       span(class='text-hidden') 상단으로
       i(class='fa-solid fa-chevron-up text-base')
@@ -25,6 +27,16 @@ script.
       document.documentElement.classList.toggle('dark')
 
       this.$data.dark = ! this.$data.dark
+      
+      // 토글 시 아이콘 변경
+      const toggleBtn = document.getElementById("bottom_toggle_btn");
+      if (document.documentElement.classList.contains('dark')) {
+        toggleBtn.classList.add("fa-moon");
+        toggleBtn.classList.remove("fa-sun");
+      } else {
+        toggleBtn.classList.add("fa-sun");
+        toggleBtn.classList.remove("fa-moon");
+      }
     }
   })))
 
