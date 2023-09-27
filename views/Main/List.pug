@@ -3,7 +3,7 @@ s_list
       data-mode='[##_list_style_##]')
     header(class='mx-4 relative lg:w-idx lg:mx-auto')
       //- s_list_image
-        //- .thumbnail(class='absolute right-0 top-0 w-full h-[20em] before:content-[""] before:absolute before:right-0 before:top-0 before:w-full before:h-[20em] before:bg-h-300/80 before:z-10 [&+.description]:text-h-800')
+        //- .thumbnail(class='absolute right-0 top-0 w-full h-[20em] before:content-[""] before:absolute before:right-0 before:top-0 before:w-full before:h-[20em] before:bg-h-350 before:z-10 [&+.description]:text-h-800')
         //-   img(
         //-     src='[##_list_image_##]'
         //-     alt=''
@@ -21,7 +21,7 @@ style
   :postcss
     [data-mode=list] {
       .list {
-        @apply flex flex-col gap-y-0 sm:gap-y-0 rounded-[12px] bg-h-700/60 dark:bg-b-350/60 p-8;
+        @apply flex flex-col gap-y-0 sm:gap-y-0 rounded-[12px] bg-h-750 dark:bg-b-375 p-8;
       }
 
       .post {
@@ -124,7 +124,7 @@ style
         }
 
         .description {
-          @apply bg-b-350/60 gap-y-2 p-10 lg:p-16;
+          @apply bg-b-375 gap-y-2 p-10 lg:p-16;
 
           h2 {
             @apply text-xl lg:text-2xl font-bold;

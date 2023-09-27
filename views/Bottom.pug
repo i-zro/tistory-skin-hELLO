@@ -1,20 +1,15 @@
 #bottom(class='flex justify-end box-border fixed text-sm z-40 bottom-3 xl:bottom-4 right-3 xl:right-4')
-  div(class='flex flex-col gap-y-3')
+  div(class='flex flex-col gap-y-2')
     button.subscription(
-      x-data='{ subscribed: T.config.SUBSCRIPTION.isConnected }'
       :data-blog-id='T.config.BLOG.id'
       :data-url='TistoryBlog.tistoryUrl'
-      @click='subscribed = ! subscribed'
       class='flex justify-center items-center w-10 h-10 outline-0 rounded-full btn_menu_toolbar btn_subscription #subscribe')
-      span(class='text-hidden') 구독하기
-      i(:class='subscribed ? "fa-solid fa-star" : "fa-regular fa-star"' class='text-sm' id='bottom_subscribe_btn')
+      i(class="fa-regular fa-star" style="font-weight: 400")
     button(
       x-data='theme'
       @click='toggle')
-      span(class='text-hidden') 테마
       i(:class='localStorage.TTDARK === "Y" ? "fa-moon" : "fa-sun"' class='fa-solid text-base' id='bottom_toggle_btn')
     a(href='#hELLO')
-      span(class='text-hidden') 상단으로
       i(class='fa-solid fa-chevron-up text-base')
 
 script.
@@ -45,6 +40,6 @@ style
     #bottom {
       a,
       button {
-        @apply flex justify-center items-center w-10 h-10 outline-0 rounded-full text-h-400 hover:text-h-200 dark:text-b-900 bg-h-700 dark:bg-b-350 hover:bg-h-yellow hover:dark:bg-b-purple;
+        @apply flex justify-center items-center w-10 h-10 outline-0 rounded-full text-h-350 hover:text-h-200 dark:text-b-900 bg-h-700 dark:bg-b-375 hover:bg-h-yellow hover:dark:bg-b-purple;
       }
     }
