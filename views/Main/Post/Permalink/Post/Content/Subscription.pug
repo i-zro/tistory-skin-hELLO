@@ -2,13 +2,13 @@ if process.env.NODE_ENV === 'development'
   template(x-teleport='.contents_style > .container_postbtn')
     button.btn_menu_toolbar.btn_subscription(
       type='button'
-      class='#subscribe'
-      data-blog-id='3751118'
-      data-url='https://pronist.tistory.com/5'
-      data-device='web_pc')
-      em.txt_state 구독하기
-      strong.txt_tool_id hELLO.
+      class='#subscribe group'
+      x-data='{ subscribed: T.config.SUBSCRIPTION.isConnected }'
+      :data-blog-id='T.config.BLOG.id'
+      :data-url='TistoryBlog.tistoryUrl'
+      @click='subscribed = ! subscribed')
       span.img_common_tistory.ico_check_type1
+      i(:class='subscribed ? "fa-solid" : "fa-regular"' class='fa-star text-sm text-h-350 group-hover:text-h-100')
 
 style(once='content-subscription-button')
   :postcss
@@ -24,10 +24,6 @@ style(once='content-subscription-button')
           .txt_tool_id,
           .ico_check_type1 {
             @apply hidden;
-          }
-
-          &::before {
-            @apply fa-star font-bold text-sm;
           }
         }
       }

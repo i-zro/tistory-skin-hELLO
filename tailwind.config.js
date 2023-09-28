@@ -28,6 +28,7 @@ module.exports = {
         750: '#ECECED',
         800: '#F8F8F9',
         900: '#FFFFFF',
+        lightyellow: '#FFE566',
         yellow: '#FFD300',
         darkyellow: '#FFCD01'
       },

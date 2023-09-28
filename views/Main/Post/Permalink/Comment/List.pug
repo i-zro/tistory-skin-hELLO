@@ -12,9 +12,9 @@ mixin comment(type, replyable=true)
           class='rounded-full')
         div
           div(class='text-sm font-bold text-h-200 dark:text-b-900 [&_img]:hidden') #{`[##_${type}_rep_name_##]`}
-          time(class='text-h-400 dark:text-b-700 text-xs') #{`[##_${type}_rep_date_##]`}
+          time(class='text-h-350 dark:text-b-800 text-xs') #{`[##_${type}_rep_date_##]`}
     div(class='pl-16 leading-7 text-sm text-h-200 dark:text-b-900') #{`[##_${type}_rep_desc_##]`}
-    div(class='pl-16 flex gap-x-1 text-h-400 dark:text-b-700 text-xs')
+    div(class='pl-16 flex gap-x-1 text-h-350 dark:text-b-800 text-xs')
       a(
         href='#'
         onclick=`[##_${type}_rep_onclick_delete_##]`) 수정/삭제
@@ -59,7 +59,7 @@ style
   :postcss
     #comments {
       .tt_more_preview_comments_wrap {
-        @apply my-4 text-sm bg-h-750 dark:bg-b-375 text-h-400 dark:text-b-900 rounded-xl py-3 px-4 duration-200;
+        @apply my-4 text-sm bg-h-750 dark:bg-b-375 text-h-350 dark:text-b-900 rounded-xl py-3 px-4 duration-200;
 
         &:hover {
           @apply bg-h-yellow dark:bg-b-purple text-h-200 dark:text-b-900;

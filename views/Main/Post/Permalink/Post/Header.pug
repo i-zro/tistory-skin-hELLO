@@ -1,6 +1,6 @@
 header(class='mx-4 lg:max-w-screen-lg lg:w-pem lg:mx-auto relative flex flex-row justify-start items-start mt-10 mb-8 p-8')
   #{`s_${type}_rep_thumbnail`}
-    .thumbnail(class='absolute right-0 top-0 w-full h-full bg-h-yellow/60 dark:bg-b-purple rounded-[12px] [&+.description]:text-h-200 [&+.description]:dark:text-b-900')
+    .thumbnail(class='absolute right-0 top-0 w-full h-full bg-h-lightyellow dark:bg-b-purple rounded-[12px] [&+.description]:text-h-200 [&+.description]:dark:text-b-900')
       //- img(
       //-   src=`[##_${type}_rep_thumbnail_url_##]`
       //-   alt=''
@@ -12,7 +12,7 @@ header(class='mx-4 lg:max-w-screen-lg lg:w-pem lg:mx-auto relative flex flex-row
           a(class='/notice') 공지사항
     else
       div(class='flex flex-row justify-start items-center')
-        a(href='[##_article_rep_category_link_##]' class='block font-medium leading-none px-3 py-2 mr-2 rounded-full bg-h-yellow/80 hover:bg-h-darkyellow dark:bg-b-deeppurple hover:dark:bg-b-darkpurple') [##_article_rep_category_##]
+        a(href='[##_article_rep_category_link_##]' class='block font-medium leading-none px-4 py-2 mr-2 rounded-full bg-h-yellow hover:bg-h-darkyellow dark:bg-b-deeppurple hover:dark:bg-b-darkpurple') [##_article_rep_category_##]
         div(class='flex gap-x-2 text-h-200 dark:text-b-900/80')
           time(class='text-sm') #{`[##_${type}_rep_date_##]`}
           if hasCategory

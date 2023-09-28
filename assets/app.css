@@ -82,10 +82,6 @@ textarea::-webkit-scrollbar {
     @apply font-awesome content-['\f141'];
   }
 
-  .fa-star {
-    @apply font-awesome content-['\f005'];
-  }
-
   .fa-tag {
     @apply font-awesome content-['\f02b'];
   }
