@@ -2,8 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-.menu_toolbar {
-  @apply hidden;
+/* 메뉴바/구독 설정 */
+body .menu_toolbar {
+  top: 1rem;
+  right: 0.75rem;
+}
+@media screen and (min-width: 1400px) {
+  body .menu_toolbar {
+    top: 1.25rem;
+    right: 1rem;
+  }
+}
+@media screen and (max-width: 1260px) {
+  body .menu_toolbar {
+    display: block;
+  }
+}
+
+/* 메뉴바/구독 디자인 */
+body .menu_toolbar .btn_menu_type2 {
+  width: 32px;
+  height: 32px;
+}
+body .menu_toolbar .btn_menu_type2,
+body .menu_toolbar .btn_menu_toolbar {
+  border-radius: 0.375rem;
 }
 
 a,

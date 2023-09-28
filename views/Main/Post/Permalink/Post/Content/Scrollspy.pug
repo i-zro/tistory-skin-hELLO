@@ -10,16 +10,16 @@ template(x-if='$data.headings.length > 0')
     x-transition:leave-end='opacity-0'
     x-show='show'
     class='absolute top-0 h-full')
-    div(class='sticky top-20')
+    div(class='sticky top-0')
       button(
         x-show='! open'
         @click='toggle'
-        class='fixed top-20 right-3 xl:right-4 w-8 h-8 z-30 rounded-md bg-h-750 hover:bg-h-yellow dark:bg-b-375 hover:dark:bg-b-purple text-h-350 hover:text-h-200 dark:text-b-900 dark:hover:text-b-900')
+        class='fixed top-32 right-3 xl:right-4 w-8 h-8 z-30 rounded-md bg-h-750 hover:bg-h-yellow dark:bg-b-375 hover:dark:bg-b-purple text-h-350 hover:text-h-200 dark:text-b-900 dark:hover:text-b-900')
         span(class='text-hidden') 목차
         i(class='fa-solid fa-list-check')
       div(
         :class='open ? "right-4" : "-right-60"'
-        class='max-h-[calc(100vh-theme(spacing.20)-theme(spacing.10)-theme(spacing.3)-2rem)] overflow-hidden w-56 text-sm box-border transition-[right] rounded-xl fixed top-20 right-4 z-40 bg-h-750 dark:bg-b-375 block')
+        class='max-h-[calc(100vh-theme(spacing.20)-theme(spacing.10)-theme(spacing.3)-2rem)] overflow-hidden w-56 text-sm box-border transition-[right] rounded-xl fixed top-32 right-4 z-40 bg-h-750 dark:bg-b-375 block')
         div(class='overflow-x-hidden overflow-y-scroll max-h-[inherit] w-[calc(theme(spacing.56)+theme(spacing.5))]')
           button(
             @click='toggle'
