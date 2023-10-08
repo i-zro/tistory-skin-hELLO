@@ -56,7 +56,7 @@ script(once='alpine-content-component').
               <div class="w-3 h-3 rounded-full bg-browser-green"></div>
             </div>
             <div style="font-family: 'SUIT'" class="language text-[14px] text-code-white leading-none"></div>
-            <button class="absolute w-content h-[24px] px-2 right-6 bottom-[-2.5rem] rounded-[4px] text-[12px] text-code-white tracking-wider flex items-center bg-h-300">COPY</button>
+            <button onclick="window.navigator.clipboard.writeText(this.parentNode.nextElementSibling.innerText);" onmousedown="this.classList.add('scale-90')" onmouseup="this.classList.remove('scale-90', 'bg-h-300', 'hover:bg-h-350'); this.classList.add('bg-b-blue', 'hover:bg-b-blue'); this.innerText='✓ COPIED'; setTimeout(() => { this.classList.add('bg-h-300', 'hover:bg-h-350'); this.classList.remove('bg-b-blue', 'hover:bg-b-blue'); this.innerHTML = 'COPY'; }, 800)" onmouseout="this.classList.remove('scale-90');" class="absolute w-content h-[24px] px-2 right-6 bottom-[-2.5rem] rounded-[4px] text-[12px] text-code-white tracking-wider flex items-center bg-h-300 hover:bg-h-350 origin-right duration-100">COPY</button>
           </div>
         `)
         codeBlock[i].getElementsByClassName("language")[0].innerText = codeBlock[i].classList.value.toUpperCase();
