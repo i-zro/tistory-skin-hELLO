@@ -17,11 +17,13 @@ module.exports = {
       current: 'currentColor',
       h: {
         100: '#1B1D21',
+        150: '#282C34',
         200: '#37373B',
         300: '#464B50',
         350: '#676B6F',
         400: '#7E7F86',
         500: '#9B9CA2',
+        550: '#ABB2BF',
         600: '#B0B1B6',
         650: '#D0D0D3',
         700: '#DFDFE1',
@@ -30,7 +32,8 @@ module.exports = {
         900: '#FFFFFF',
         lightyellow: '#FFE566',
         yellow: '#FFD300',
-        darkyellow: '#FFCD01'
+        darkyellow: '#FFCD01',
+        green: '#57A64A'
       },
       b: {
         100: '#060607',
@@ -51,6 +54,16 @@ module.exports = {
         purple: '#6C5DD3',
         deeppurple: '#5D4CC8',
         darkpurple: '#523fc5'
+      },
+      code: {
+        green: '#57A64A',
+        blue: '#9CDCFE',
+        white: '#D4D4D4',
+      },
+      browser: {
+        red: '#F5655B',
+        yellow: '#F6BD3B',
+        green: '#43C645',
       }
     },
     extend: {

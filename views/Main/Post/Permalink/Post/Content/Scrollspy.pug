@@ -28,16 +28,16 @@ template(x-if='$data.headings.length > 0')
             i(class='fa-solid fa-xmark')
           ol(
             x-ref='spy'
-            class='flex flex-col gap-y-3 p-6')
+            class='flex flex-col gap-y-3 p-5')
             template(x-for='heading in $data.headings' :key='heading.id')
               li(
                 :class='{ "pl-0": heading.tagName === "H2", "pl-4": heading.tagName === "H3" }'
-                class='text-h-400 dark:text-b-900 break-keep')
+                class='font-normal text-h-400 dark:text-b-800 break-keep')
                 a(
                   :href='heading.href'
                   x-text='heading.text'
-                  :class='{ "text-h-400 dark:text-b-900": heading.active }'
-                  class='text-h-400 hover:text-h-200 dark:text-b-800 hover:dark:text-b-900')
+                  :class='{ "font-medium text-h-200 dark:text-b-900": heading.active }'
+                  class='hover:font-medium text-h-200 hover:text-h-200 dark:text-b-900 hover:dark:text-b-900')
 
 script(once='alpine-scrollspy-component').
   document.addEventListener('alpine:init', () => Alpine.data('scrollspy', () => ({
@@ -60,7 +60,7 @@ script(once='alpine-scrollspy-component').
      *
      * @property {boolean} open
      */
-    open: false,
+    open: true,
 
     /**
      * Scollspy
