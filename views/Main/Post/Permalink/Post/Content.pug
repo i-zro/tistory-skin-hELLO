@@ -46,21 +46,20 @@ script(once='alpine-content-component').
     },
 
     initCodeBlocks () {
-      const codeBlocks = this.$article.querySelectorAll('pre code');
-      for (let i = 0; i < codeBlocks.length; i++) {
-        let lang = codeBlocks[i];
-        console.log(lang);
-
-        codeBlocks[i].insertAdjacentHTML('beforebegin', `
-          <div class="w-[100%] h-10 px-6 bg-h-300 flex justify-between items-center">
+      const codeBlock = this.$article.querySelectorAll('pre');
+      for (let i = 0; i < codeBlock.length; i++) {
+        codeBlock[i].getElementsByTagName("code")[0].insertAdjacentHTML('beforebegin', `
+          <div class="relative w-[100%] h-10 px-6 bg-h-300 flex justify-between items-center">
             <div class="flex gap-x-2">
               <div class="w-3 h-3 rounded-full bg-browser-red"></div>
               <div class="w-3 h-3 rounded-full bg-browser-yellow"></div>
               <div class="w-3 h-3 rounded-full bg-browser-green"></div>
             </div>
-            <div></div>
+            <div style="font-family: 'SUIT'" class="language text-[14px] text-code-white leading-none"></div>
+            <button class="absolute w-content h-[24px] px-2 right-6 bottom-[-2.5rem] rounded-[4px] text-[12px] text-code-white tracking-wider flex items-center bg-h-300">COPY</button>
           </div>
         `)
+        codeBlock[i].getElementsByClassName("language")[0].innerText = codeBlock[i].classList.value.toUpperCase();
       }
     },
 
@@ -384,7 +383,7 @@ style(once='content')
 
         ol[data-ke-list-type],
         ul[data-ke-list-type] {
-          @apply flex flex-col gap-y-1 list-inside my-5;
+          @apply flex flex-col gap-y-1 list-inside mb-5;
 
           ol[data-ke-list-type],
           ul[data-ke-list-type] {
