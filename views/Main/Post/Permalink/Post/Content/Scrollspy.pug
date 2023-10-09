@@ -23,12 +23,16 @@ template(x-if='$data.headings.length > 0')
         div(class='overflow-x-hidden overflow-y-scroll max-h-[inherit] w-[calc(theme(spacing.56)+theme(spacing.5))]')
           button(
             @click='toggle'
-            class='absolute text-base top-2 right-4 text-h-350 dark:text-b-900')
+            class='hidden absolute text-base top-2 right-4 text-h-350 dark:text-b-900')
             span(class='text-hidden') 목차 닫기
             i(class='fa-solid fa-xmark')
           ol(
             x-ref='spy'
-            class='flex flex-col gap-y-3 p-5')
+            class='flex flex-col gap-y-3 p-5 px-6')
+            div(class="w-100 flex justify-between items-center font-bold text-h-200 dark:text-b-900 pb-2 border-b border-h-200 dark:border-b-900") 목차
+              i(
+                @click='toggle'
+                class="fas fa-bars cursor-pointer")
             template(x-for='heading in $data.headings' :key='heading.id')
               li(
                 :class='{ "pl-0": heading.tagName === "H2", "pl-4": heading.tagName === "H3" }'
@@ -36,8 +40,8 @@ template(x-if='$data.headings.length > 0')
                 a(
                   :href='heading.href'
                   x-text='heading.text'
-                  :class='{ "font-medium text-h-200 dark:text-b-900": heading.active }'
-                  class='hover:font-medium text-h-200 hover:text-h-200 dark:text-b-900 hover:dark:text-b-900')
+                  :class='{ "translate-y-[-2px] scale-105 text-h-200 dark:text-b-900": heading.active }'
+                  class='hover:translate-y-[-2px] hover:scale-105 text-h-200 hover:text-h-200 dark:text-b-900 hover:dark:text-b-900 block origin-left duration-100')
 
 script(once='alpine-scrollspy-component').
   document.addEventListener('alpine:init', () => Alpine.data('scrollspy', () => ({
