@@ -20,7 +20,7 @@ template(x-if='$data.headings.length > 0')
       div(
         :class='open ? "right-4" : "-right-60"'
         class='max-h-[calc(100vh-theme(spacing.20)-theme(spacing.10)-theme(spacing.3)-2rem)] overflow-hidden w-56 text-sm box-border transition-[right] rounded-xl fixed top-32 right-4 z-40 bg-h-750 dark:bg-b-375 block')
-        div(class='overflow-x-hidden overflow-y-scroll max-h-[inherit] w-[calc(theme(spacing.56)+theme(spacing.5))]')
+        div(class='overflow-x-hidden overflow-y-scroll max-h-[inherit] w-[calc(theme(spacing.56)+theme(spacing.5))] pr-5')
           button(
             @click='toggle'
             class='hidden absolute text-base top-2 right-4 text-h-350 dark:text-b-900')

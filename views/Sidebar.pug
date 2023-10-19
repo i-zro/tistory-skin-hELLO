@@ -57,7 +57,7 @@ style
         }
 
         i {
-          @apply text-h-500 dark:text-b-700;
+          @apply text-h-400 dark:text-b-700;
         }
 
         .hashtag:hover i,
@@ -67,21 +67,31 @@ style
         }
 
         a:not(.link_tit) {
-          @apply text-h-350 hover:text-h-200 dark:text-b-800 dark:hover:text-b-900;
+          @apply text-h-300 dark:text-b-900;
         }
 
         a.recent-comments:not(.link_tit) {
-          @apply hover:text-h-200 hover:dark:text-b-900;
+          @apply text-h-350 dark:text-b-800;
         }
 
         a.recent-comments:not(.link_tit):hover {
+          @apply text-h-200 dark:text-b-900;
+          
           i {
             @apply text-h-200 dark:text-b-900;
           }
         }
 
+        a.hashtag:not(.link_tit) {
+          @apply text-h-350 dark:text-b-800;
+        }
+
+        a.hashtag:not(.link_tit):hover {
+          @apply text-h-200 dark:text-b-900;
+        }
+
         #copyright a:not(link_tit) {
-          @apply text-h-400 hover:text-h-200 dark:text-b-700 hover:dark:text-b-900;
+          @apply text-h-350 hover:text-h-200 dark:text-b-700 hover:dark:text-b-900;
         }
 
         .link_item {

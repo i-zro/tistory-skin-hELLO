@@ -27,7 +27,7 @@ script.
      * @param {HTMLElement} $subCategory
      */
     foldable ($subCategory) {
-      $subCategory.parentNode.setAttribute('x-data', '{ open: false }')
+      $subCategory.parentNode.setAttribute('x-data', '{ open: true }')
       $subCategory.setAttribute('x-show', 'open')
       $subCategory.setAttribute('x-collapse', '')
 
@@ -87,20 +87,30 @@ style
             @apply flex flex-col;
 
             li {
-              @apply relative text-sm rounded-[8px] hover:bg-h-yellow hover:dark:bg-b-purple;
+              @apply relative text-sm;
+
+              a {
+                @apply hover:font-bold;
+              }
 
               i {
-                @apply absolute right-0 text-sm cursor-pointer;
+                @apply absolute right-0 text-sm cursor-pointer hidden;
               }
             }
           }
 
           .sub_category_list {
+            @apply mb-2;
+
             li {
-              @apply first:mt-4;
+              @apply w-[100%];
+
+              a {
+                @apply block px-4 py-1 text-h-400 dark:text-b-800;
+              }
 
               .link_sub_item::before {
-                @apply mr-1 fa-chevron-right font-bold text-h-500 dark:text-b-700 text-sm;
+                @apply mr-1 fa-ellipsis text-h-500 dark:text-b-700 text-sm;
               }
             }
           }

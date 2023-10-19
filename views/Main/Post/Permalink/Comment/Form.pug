@@ -7,7 +7,7 @@ mixin formGuestControl(type)
         type='text'
         name=`[##_${type}_input_name_##]`
         value='[##_guest_name_##]'
-        class='border-0 inline-block outline-none w-16 lg:w-32 bg-b-transparent')
+        class='border-0 border-b border-h-200 dark:border-b-900 inline-block outline-none w-16 lg:w-28 mr-4 lg:mr-6 bg-b-transparent')
     div(class='flex gap-x-2 text-xs text-h-200 dark:text-b-900')
       label(for='password') 암호
       input#password(
@@ -16,18 +16,18 @@ mixin formGuestControl(type)
         maxlength='8'
         name=`[##_${type}_input_password_##]`
         value='[##_guest_password_##]'
-        class='border-0 inline-block outline-none w-16 lg:w-32 bg-b-transparent')
+        class='border-0 border-b border-h-200 dark:border-b-900 inline-block outline-none w-16 lg:w-28 bg-b-transparent')
 
 mixin form(type)
   #{`s_${type}_input_form`}
-    div(class='p-8 w-full overflow-hidden mt-8 rounded-[12px] box-border h-32 lg:h-48 relative bg-h-750 dark:bg-b-375')
+    div(class='p-6 w-full overflow-hidden mt-8 rounded-[12px] box-border h-32 lg:h-48 relative bg-h-750 dark:bg-b-375')
       div(class='box-border flex flex-col justify-between h-full gap-y-3')
         label(
           for='text'
           class='text-hidden') 댓글
         textarea#text(
           name=`${type === 'guest' ? '[##_guest_textarea_body_##]' : '[##_rp_input_comment_##]'}`
-          class='border-0 resize-none p-0 pr-5 h-full overflow-x-hidden overflow-y-scroll text-sm box-border outline-none w-[calc(100%+theme(spacing.10))] bg-b-transparent')
+          class='border-0 bg-h-700 dark:bg-b-400 rounded-[8px] resize-none p-3 w-full h-full overflow-x-hidden overflow-y-scroll text-sm box-border outline-none')
         div(class='flex items-end justify-end')
           if process.env.NODE_ENV === 'development'
             +formGuestControl(type)

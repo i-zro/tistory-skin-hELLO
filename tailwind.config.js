@@ -59,12 +59,12 @@ module.exports = {
       code: {
         green: '#57A64A',
         blue: '#9CDCFE',
-        white: '#D4D4D4',
+        white: '#D4D4D4'
       },
       browser: {
         red: '#F5655B',
         yellow: '#F6BD3B',
-        green: '#43C645',
+        green: '#43C645'
       }
     },
     extend: {
