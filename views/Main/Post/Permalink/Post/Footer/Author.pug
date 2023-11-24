@@ -10,3 +10,9 @@ div(class='border-t border-b border-dotted border-h-600 dark:border-b-400 mt-8 p
     div(class='text-h-200 dark:text-b-900 font-bold mr-2') [##_title_##]
     div(class='text-sm text-h-350 dark:text-b-800 mr-6') @[##_blogger_##]
     div(class='font-medium text-sm text-h-200 dark:text-b-900') [##_desc_##]
+
+style(once='namecard')
+  :postcss
+    div[data-tistory-react-app="Namecard"] {
+      @apply hidden;
+    }
