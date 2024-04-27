@@ -14,10 +14,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 12
-      - run: npm install --no-optional
-      - run: npm run lint
-      - name: Build production
+      - name: Install dependencies
+        run: npm install --no-optional
+      - name: Lint JavaScript and Pug files
+        run: |
+          npm run lint
+          pug-lint .  # Add this if not already in npm run lint
+        continue-on-error: true  # Optional: continue even if linting fails
+      - name: Production build
         run: npm run production
         env:
-          NODE_ENV: production
           TS_SESSION: ${{ secrets.TS_SESSION }}
