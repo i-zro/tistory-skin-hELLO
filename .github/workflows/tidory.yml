@@ -25,3 +25,4 @@ jobs:
         run: npm run production
         env:
           TS_SESSION: ${{ secrets.TS_SESSION }}
+          URL: ${{ secrets.URL }}
