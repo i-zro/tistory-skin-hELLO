@@ -1,4 +1,4 @@
 .idea
 node_modules
 dist
-tidory.config.js
+# tidory.config.js

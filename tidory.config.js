@@ -3,8 +3,8 @@
  * https://tidory.com/docs/configuration/
  */
 module.exports = {
-  ts_session: '',
-  url: 'process.env.URL',
+  ts_session: process.env.TS_SESSION,
+  url: process.env.URL,
 
   preview: {
     /**
