@@ -1,41 +1,23 @@
-name: Deploy on Main Branch
+name: Tidory
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-
-    - name: Install Dependencies
-      run: npm install
-
-    - name: Build and Deploy
-      env:
-        TS_SESSION: ${{ secrets.TS_SESSION }}
-        PROJECT_URL: 'https://naa0.tistory.com/'
-      run: |
-        echo "ts_session = '${{ secrets.TS_SESSION }}';" >> tidory.config.js
-        echo "url = '${PROJECT_URL}';" >> tidory.config.js
-        npm run production
-        npm run deploy
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - run: npm install --no-optional
+      - run: npm run lint
+      - name: Build production
+        run: npm run production
+        env:
+          NODE_ENV: production
+          TS_SESSION: ${{ secrets.TS_SESSION }}
