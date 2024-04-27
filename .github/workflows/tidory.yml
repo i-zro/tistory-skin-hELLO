@@ -38,3 +38,4 @@ jobs:
         echo "module.exports = { ts_session: '${{ secrets.TS_SESSION }}', url: '${PROJECT_URL}' }" > ts.config.js
         npm run production
         npm run deploy
+
