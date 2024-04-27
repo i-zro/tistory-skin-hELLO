@@ -35,7 +35,7 @@ jobs:
         TS_SESSION: ${{ secrets.TS_SESSION }}
         PROJECT_URL: 'https://naa0.tistory.com/'
       run: |
-        echo "module.exports = { ts_session: '${{ secrets.TS_SESSION }}', url: '${PROJECT_URL}' }" > ts.config.js
+        echo "ts_session = '${{ secrets.TS_SESSION }}';" >> tidory.config.js
+        echo "url = '${PROJECT_URL}';" >> tidory.config.js
         npm run production
         npm run deploy
-
